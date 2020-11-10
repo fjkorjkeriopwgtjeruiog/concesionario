@@ -27,9 +27,16 @@ import {
   deleteTienda,
   createTienda,
 } from './data/tiendas.js';
+import {
+  getCompras,
+  getCompraId,
+  updateCompra,
+  deleteCompra,
+  createCompra,
+} from './data/compra.js';
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.json());
 app.use(function (req, res, next) {
@@ -242,6 +249,58 @@ app.put('/tienda/:id', (req, res) => {
 
 app.delete('/tienda/:id', (req, res) => {
   deleteTienda(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+// Datos de las compras.
+
+app.get('/compra', (req, res) => {
+  getCompras()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/compra/:id', (req, res) => {
+  getCompraId(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.post('/compra', (req, res) => {
+  createCompra(req.body)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.put('/compra/:id', (req, res) => {
+  updateCompra(req.body, req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.delete('/compra/:id', (req, res) => {
+  deleteCompra(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })
