@@ -5,7 +5,15 @@ import {
   updateEmpleado,
   deleteEmpleado,
   createEmpleado,
-} from './empleados.js';
+} from './data/empleados.js';
+
+import {
+  getCoches,
+  getCocheId,
+  updateCoche,
+  deleteCoche,
+  createCoche,
+} from './data/coches.js';
 
 const app = express();
 const port = 3000;
@@ -20,6 +28,8 @@ app.use(function (req, res, next) {
   );
   next();
 });
+
+// Datos de los empleados.
 
 app.get('/empleado', (req, res) => {
   getEmpleados()
@@ -70,6 +80,61 @@ app.delete('/empleado/:id', (req, res) => {
       res.status(500).send(error);
     });
 });
+
+// Datos de los coches.
+
+app.get('/coche', (req, res) => {
+  getCoches()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/coche/:id', (req, res) => {
+  getCocheId(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.post('/coche', (req, res) => {
+  createCoche(req.body)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.put('/coche/:id', (req, res) => {
+  updateCoche(req.body, req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.delete('/coche/:id', (req, res) => {
+  deleteCoche(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+// Puerto activado.
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
 });
