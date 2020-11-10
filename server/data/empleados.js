@@ -1,4 +1,4 @@
-import pool from './base.js';
+import pool from '../base.js';
 
 export const getEmpleados = () => {
   return new Promise(function (resolve, reject) {
@@ -10,6 +10,7 @@ export const getEmpleados = () => {
     });
   });
 };
+
 export const getEmpleadoId = (id) => {
   return new Promise(function (resolve, reject) {
     pool.query(
@@ -22,6 +23,7 @@ export const getEmpleadoId = (id) => {
     );
   });
 };
+
 export const createEmpleado = (body) => {
   return new Promise(function (resolve, reject) {
     const {
@@ -43,6 +45,7 @@ export const createEmpleado = (body) => {
     );
   });
 };
+
 export const updateEmpleado = (body, id) => {
   return new Promise(function (resolve, reject) {
     const {
@@ -64,6 +67,7 @@ export const updateEmpleado = (body, id) => {
     );
   });
 };
+
 export const deleteEmpleado = (id) => {
   return new Promise(function (resolve, reject) {
     pool.query('DELETE FROM empleado WHERE id = $1', [id], (error, results) => {
