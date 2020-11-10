@@ -1,13 +1,14 @@
 import express from 'express';
 import {
-  getMerchants,
-  getMerchantId,
-  updateMerchant,
-  deleteMerchant,
+  getEmpleados,
+  getEmpleadoId,
+  updateEmpleado,
+  deleteEmpleado,
+  createEmpleado,
 } from './merchant.js';
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 app.use(express.json());
 app.use(function (req, res, next) {
@@ -20,8 +21,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('/merchants', (req, res) => {
-  getMerchants()
+app.get('/empleado', (req, res) => {
+  getEmpleados()
     .then((response) => {
       res.status(200).send(response);
     })
@@ -30,8 +31,8 @@ app.get('/merchants', (req, res) => {
     });
 });
 
-app.get('/merchants/:id', (req, res) => {
-  getMerchantId(req.params.id)
+app.get('/empleado/:id', (req, res) => {
+  getEmpleadoId(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })
@@ -40,8 +41,8 @@ app.get('/merchants/:id', (req, res) => {
     });
 });
 
-app.post('/merchants', (req, res) => {
-  createMerchant(req.body)
+app.post('/empleado', (req, res) => {
+  createEmpleado(req.body)
     .then((response) => {
       res.status(200).send(response);
     })
@@ -50,8 +51,8 @@ app.post('/merchants', (req, res) => {
     });
 });
 
-app.put('/merchants/:id', (req, res) => {
-  updateMerchant(req.body, req.params.id)
+app.put('/empleado/:id', (req, res) => {
+  updateEmpleado(req.body, req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })
@@ -60,8 +61,8 @@ app.put('/merchants/:id', (req, res) => {
     });
 });
 
-app.delete('/merchants/:id', (req, res) => {
-  deleteMerchant(req.params.id)
+app.delete('/empleado/:id', (req, res) => {
+  deleteEmpleado(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })

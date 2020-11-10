@@ -9,9 +9,9 @@ const pool = new Pool({
   port: 5432,
 });
 
-export const getMerchants = () => {
+export const getEmpleados = () => {
   return new Promise(function (resolve, reject) {
-    pool.query('SELECT * FROM merchants ORDER BY id ASC', (error, results) => {
+    pool.query('SELECT * FROM empleado ORDER BY id', (error, results) => {
       if (error) {
         reject(error);
       }
@@ -19,10 +19,10 @@ export const getMerchants = () => {
     });
   });
 };
-export const getMerchantId = (id) => {
+export const getEmpleadoId = (id) => {
   return new Promise(function (resolve, reject) {
     pool.query(
-      'SELECT * FROM merchants WHERE id = $1',
+      'SELECT * FROM empleado WHERE id = $1',
       [id],
       (error, results) => {
         if (error) reject(error);
@@ -31,47 +31,55 @@ export const getMerchantId = (id) => {
     );
   });
 };
-export const createMerchant = (body) => {
+export const createEmpleado = (body) => {
   return new Promise(function (resolve, reject) {
-    const { name, email } = body;
+    const {
+      nombre,
+      fecha_nacimiento,
+      dni,
+      ciudad_natal,
+      fecha_contratacion,
+    } = body;
     pool.query(
-      'INSERT INTO merchants (name, email) VALUES ($1, $2)',
-      [name, email],
+      'INSERT INTO empleado (nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion) VALUES ($1, $2, $3, $4, $5)',
+      [nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion],
       (error, results) => {
         if (error) {
           reject(error);
         }
-        resolve(`A new merchant has been added added`);
+        resolve(`¡Empleado añadido con exito!`);
       },
     );
   });
 };
-export const updateMerchant = (body, id) => {
+export const updateEmpleado = (body, id) => {
   return new Promise(function (resolve, reject) {
-    const { name, email } = body;
+    const {
+      nombre,
+      fecha_nacimiento,
+      dni,
+      ciudad_natal,
+      fecha_contratacion,
+    } = body;
     pool.query(
-      'UPDATE merchants SET name=$1, email=$2 WHERE id=$3',
-      [name, email, id],
+      'UPDATE empleado SET nombre=$1, fecha_nacimiento=$2, dni=$3, ciudad_natal=$4, fecha_contratacion=$5 WHERE id=$6',
+      [nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion, id],
       (error, results) => {
         if (error) {
           reject(error);
         }
-        resolve(`A new merchant has been updated`);
+        resolve(`¡Los datos del empleado se han actualizado!`);
       },
     );
   });
 };
-export const deleteMerchant = (id) => {
+export const deleteEmpleado = (id) => {
   return new Promise(function (resolve, reject) {
-    pool.query(
-      'DELETE FROM merchants WHERE id = $1',
-      [id],
-      (error, results) => {
-        if (error) {
-          reject(error);
-        }
-        resolve(`Merchant deleted`);
-      },
-    );
+    pool.query('DELETE FROM empleado WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        reject(error);
+      }
+      resolve(`¡Empleado eliminado!`);
+    });
   });
 };
