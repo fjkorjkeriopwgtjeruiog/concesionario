@@ -20,6 +20,13 @@ import {
   deleteCliente,
   createCliente,
 } from './data/clientes.js';
+import {
+  getTiendas,
+  getTiendaId,
+  updateTienda,
+  deleteTienda,
+  createTienda,
+} from './data/tiendas.js';
 
 const app = express();
 const port = 3000;
@@ -183,6 +190,58 @@ app.put('/cliente/:id', (req, res) => {
 
 app.delete('/cliente/:id', (req, res) => {
   deleteCliente(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+// Datos de las tiendas.
+
+app.get('/tienda', (req, res) => {
+  getTiendas()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/tienda/:id', (req, res) => {
+  getTiendaId(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.post('/tienda', (req, res) => {
+  createTienda(req.body)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.put('/tienda/:id', (req, res) => {
+  updateTienda(req.body, req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.delete('/tienda/:id', (req, res) => {
+  deleteTienda(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })
