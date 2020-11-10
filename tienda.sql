@@ -46,8 +46,8 @@ create table tienda(
   gerente integer unique references empleado(id) on delete cascade
 );
 
-insert into tienda(nombre, ciudad,anno_construccion,gerente) values('El Acelerador Feliz','San Fernando',2003,1);
-insert into tienda(nombre, ciudad,anno_construccion,gerente) values('El Pedal Mágico','Chiclana',2008,2);
+insert into tienda(nombre, ciudad, anno_construccion, gerente) values('El Acelerador Feliz','San Fernando',2003,1);
+insert into tienda(nombre, ciudad, anno_construccion, gerente) values('El Pedal Mágico','Chiclana',2008,2);
 
 create table compra(
   id serial primary key,
