@@ -5,7 +5,7 @@ import {
   updateEmpleado,
   deleteEmpleado,
   createEmpleado,
-} from './merchant.js';
+} from './empleados.js';
 
 const app = express();
 const port = 3000;
