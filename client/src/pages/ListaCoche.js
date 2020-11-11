@@ -7,7 +7,7 @@ const Teachers = () => {
 
   const fetchAllCoches = async () => {
     const data = await getAllCoches();
-    setCocheData({ data });
+    setCocheData(data);
   };
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Teachers = () => {
             return (
               <li className="lista-profe" key={i}>
                 <p>
-                  {coche.id} {coche.fabricante} {coche.nombre}
+                  Coche {coche.id}: {coche.fabricante} {coche.nombre}
                 </p>
               </li>
             );
