@@ -1,4 +1,6 @@
 import express from 'express';
+import dotenv from 'dotenv';
+
 import {
   getEmpleados,
   getEmpleadoId,
@@ -43,6 +45,8 @@ import {
 
 const app = express();
 const port = 6000;
+
+dotenv.config();
 
 app.use(express.json());
 app.use(function (req, res, next) {
