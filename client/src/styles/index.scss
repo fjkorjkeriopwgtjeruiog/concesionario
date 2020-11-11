@@ -1,0 +1,30 @@
+@import 'normalize';
+@import 'global';
+@import 'ChaTea';
+@import 'home';
+@import 'page';
+@import 'footer';
+@import 'header';
+@import 'formcourse';
+@import 'formteacher';
+@import 'course';
+@import 'about';
+@import 'teacher';
+@import 'ChaCou';
+
+.App {
+  position: relative;
+}
+
+// Boton
+.btn {
+  color: #ffffff;
+  background-color: #1781be;
+  border: 1px solid #011c00;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+}

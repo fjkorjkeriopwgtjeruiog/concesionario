@@ -1,0 +1,40 @@
+.Wrapper-flex {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+
+  .Wrapper {
+    flex: 1;
+    h3 {
+      font-size: 2rem;
+    }
+    article {
+      display: flex;
+      align-items: center;
+
+      img {
+        border-radius: 50%;
+        height: 6rem;
+        width: 6rem;
+        align-items: left;
+        border-color: grey 1rem;
+      }
+
+      .Author {
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+
+        h4,
+        p {
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .Pic {
+    flex: 1;
+  }
+}

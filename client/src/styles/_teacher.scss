@@ -1,0 +1,54 @@
+.action {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 32px;
+  margin-top: 32px;
+    
+}
+
+.Nombreprofe{
+    margin-left:20%;
+    font-size:2rem;
+  }
+
+
+
+.Wrapper-flex-profes {
+  margin-bottom: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  .lista-profes-container {
+    min-width: 998px;
+    display: grid;
+    list-style: none;
+      
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+
+    .lista-profe {
+      background-color:rgb(237, 233, 233);
+      border: solid 1px black;
+      padding: 5%;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px #333;
+      
+
+      .image {
+        height: 200px;
+        width: 100%;
+      }
+      a {
+        h3 {
+          color: #fff;
+        }
+      }
+    }
+    
+  }
+
+}
