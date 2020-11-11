@@ -7,6 +7,7 @@ import Footer from './Footer.js';
 import Inicio from '../pages/Inicio.js';
 import ListaCoche from '../pages/ListaCoche.js';
 import CrearCoche from '../pages/CrearCoche.js';
+import ModificarCoche from '../pages/ModificarCoche.js';
 import ErrorPage from '../pages/Error.js';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={Inicio} />
           <Route path="/coche" component={ListaCoche} />
           <Route path="/crearcoche" component={CrearCoche} />
+          <Route path="/modificarcoche/:id" component={ModificarCoche} />
           <Route path="/*" component={ErrorPage} />
         </Switch>
         <Footer />

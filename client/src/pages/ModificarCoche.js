@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
-import { createNewCoche } from '../lib/coche.js';
+import React, { useState, useEffect } from 'react';
+import { updateCoche, getCoche } from '../lib/coche.js';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const CrearCoche = () => {
+const ModificarCoche = () => {
   const [nom, setNom] = useState('');
   const [fab, setFab] = useState('');
   const [ann, setAnn] = useState('');
   const [pre, setPre] = useState();
   const [pla, setPla] = useState();
+
+  const { id } = useParams();
+
+  const fetchCoche = async () => {
+    const data = await getCoche(id);
+    const datos = data[0]; // Los datos son devueltos como un array, por lo que hay que arreglarlo.
+    setNom(datos.nombre);
+    setFab(datos.fabricante);
+    setAnn(datos.anno_fabricacion);
+    setPre(datos.precio);
+    setPla(datos.plazas);
+  };
+
+  useEffect(() => {
+    fetchCoche();
+  }, []);
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -25,7 +42,7 @@ const CrearCoche = () => {
     setPla(event.currentTarget.value);
   };
 
-  const introducecoche = () => {
+  const modificacoche = () => {
     const co = {
       nombre: nom,
       fabricante: fab,
@@ -33,18 +50,24 @@ const CrearCoche = () => {
       precio: pre,
       plazas: pla,
     };
-    createNewCoche(co);
-    alert('¡El coche ha sido creado correctamente!');
+    updateCoche(co, id);
+    alert('¡Los datos del coche ha sido modificados con exito!');
   };
 
   return (
     <main className="crear-profe">
-      <h2>Introduzca los datos del nuevo coche</h2>
+      <h2>Introduzca los nuevos datos para el coche</h2>
 
       <form>
         <div>
           <label className="Label">Nombre:</label>
-          <input type="text" name="nombre" id="nombre" onChange={ajuNom} />
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            value={nom}
+            onChange={ajuNom}
+          />
         </div>
 
         <div>
@@ -53,6 +76,7 @@ const CrearCoche = () => {
             type="text"
             name="fabricante"
             id="fabricante"
+            value={fab}
             onChange={ajuFab}
           />
         </div>
@@ -63,13 +87,20 @@ const CrearCoche = () => {
             type="text"
             name="anno_fabricacion"
             id="anno_fabricacion"
+            value={ann}
             onChange={ajuAnn}
           />
         </div>
 
         <div>
           <label>precio:</label>
-          <input type="text" name="precio" id="precio" onChange={ajuPre} />
+          <input
+            type="text"
+            name="precio"
+            id="precio"
+            value={pre}
+            onChange={ajuPre}
+          />
         </div>
 
         <div>
@@ -78,12 +109,18 @@ const CrearCoche = () => {
             type="text"
             name="plazas"
             id="plazas"
+            value={pla}
             onChange={ajuPla}
           ></input>
         </div>
 
-        <button className="btn" type="button" onClick={introducecoche}>
-          <Link to="/coche">Crear Coche</Link>
+        <button
+          className="btn"
+          type="button"
+          value={pre}
+          onClick={modificacoche}
+        >
+          <Link to="/coche">Modificar Coche</Link>
         </button>
         <br />
       </form>
@@ -91,4 +128,4 @@ const CrearCoche = () => {
   );
 };
 
-export default CrearCoche;
+export default ModificarCoche;
