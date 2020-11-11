@@ -1,8 +1,8 @@
-drop table coche;
+drop table compra;
 drop table tienda;
+drop table coche;
 drop table empleado;
 drop table cliente;
-drop table compra;
 
 create table coche(
   id serial primary key,
@@ -42,7 +42,7 @@ create table tienda(
   id serial primary key,
   nombre varchar,
   ciudad varchar,
-  anno_construccion varchar,
+  anno_construccion integer,
   gerente integer unique references empleado(id) on delete cascade
 );
 

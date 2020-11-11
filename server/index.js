@@ -34,9 +34,15 @@ import {
   deleteCompra,
   createCompra,
 } from './data/compra.js';
+import {
+  TiendaReal,
+  CompraReal,
+  TiendaRealId,
+  CompraRealId,
+} from './data/otro.js';
 
 const app = express();
-const port = 5000;
+const port = 2000;
 
 app.use(express.json());
 app.use(function (req, res, next) {
@@ -301,6 +307,48 @@ app.put('/compra/:id', (req, res) => {
 
 app.delete('/compra/:id', (req, res) => {
   deleteCompra(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+// Funciones especiales.
+
+app.get('/tiendareal', (req, res) => {
+  TiendaReal()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/comprareal', (req, res) => {
+  CompraReal()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/tiendareal/:id', (req, res) => {
+  TiendaRealId(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/comprareal/:id', (req, res) => {
+  CompraRealId(req.params.id)
     .then((response) => {
       res.status(200).send(response);
     })
