@@ -6,6 +6,7 @@ import Footer from './Footer.js';
 
 import Inicio from '../pages/Inicio.js';
 import ListaCoche from '../pages/ListaCoche.js';
+import CrearCoche from '../pages/CrearCoche.js';
 import ErrorPage from '../pages/Error.js';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Inicio} />
           <Route path="/coche" component={ListaCoche} />
+          <Route path="/crearcoche" component={CrearCoche} />
           <Route path="/*" component={ErrorPage} />
         </Switch>
         <Footer />
