@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllCoches } from '../lib/coche.js';
+import { getAllCoches, deleteCoche } from '../lib/coche.js';
 import { Link } from 'react-router-dom';
 
 const Teachers = () => {
@@ -13,6 +13,13 @@ const Teachers = () => {
   useEffect(() => {
     fetchAllCoches();
   }, []);
+
+  const eliminacoche = async (event) => {
+    const id = event.currentTarget.value;
+    await deleteCoche(id);
+    fetchAllCoches(); // Tras eliminar el coche, actualizamos la lista.
+    alert('¡El coche ha sido eliminado de nuestra lista!');
+  };
 
   return (
     <main>
@@ -28,11 +35,25 @@ const Teachers = () => {
             return (
               <ul className="lista-profe" key={i}>
                 <h2>
-                  Nombre: {coche.fabricante} {coche.nombre}
+                  {coche.fabricante} {coche.nombre}
                 </h2>
                 <h4>Año de fabricación: {coche.anno_fabricacion}</h4>
                 <h4>Precio: {coche.precio}€</h4>
                 <h4>Nº de asientos: {coche.plazas}</h4>
+
+                <l className="Wrapper-flex-profes">
+                  <button className="btn btn-edit" type="button">
+                    <Link to={'/cochemodificar/' + coche.id}>Modificar</Link>
+                  </button>
+                  <button
+                    className="btn btn-edit"
+                    type="button"
+                    value={coche.id}
+                    onClick={eliminacoche}
+                  >
+                    Eliminar
+                  </button>
+                </l>
               </ul>
             );
           })}

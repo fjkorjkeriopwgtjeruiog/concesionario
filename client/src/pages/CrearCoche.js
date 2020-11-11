@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createNewCoche } from '../lib/coche.js';
+import { Link } from 'react-router-dom';
 
 const FormTeacher = () => {
   const [nom, setNom] = useState('');
@@ -82,7 +83,7 @@ const FormTeacher = () => {
         </div>
 
         <button className="btn" type="button" onClick={introducecoche}>
-          Crear Coche
+          <Link to="/coche">Crear Coche</Link>
         </button>
         <br />
       </form>
