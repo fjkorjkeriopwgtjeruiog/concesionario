@@ -1,3 +1,5 @@
+// Para hacer funcionar este fichero, renombralo a "base.js"
+
 import pg from 'pg';
 const { Pool } = pg;
 

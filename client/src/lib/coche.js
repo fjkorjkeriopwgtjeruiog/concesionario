@@ -1,9 +1,6 @@
-// Fallas con la carpeta.
-
-//const { URL } = process.env;
+const { REACT_APP_URL } = process.env;
 
 export const getAllCoches = async () => {
-  //alert(URL);
-  const response = await fetch('http://localhost:6000/coche');
+  const response = await fetch(REACT_APP_URL + '/coche');
   return await response.json();
 };
