@@ -16,16 +16,19 @@ const Teachers = () => {
 
   return (
     <main>
-      <h3 className="Nombreprofe">Lista de Coches</h3>
+      <h1 className="Nombreprofe">Lista de Coches</h1>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
           {cocheData.map((coche, i) => {
             return (
-              <li className="lista-profe" key={i}>
-                <p>
-                  Coche {coche.id}: {coche.fabricante} {coche.nombre}
-                </p>
-              </li>
+              <ul className="lista-profe" key={i}>
+                <h2>
+                  Nombre: {coche.fabricante} {coche.nombre}
+                </h2>
+                <h4>Año de fabricación: {coche.anno_fabricacion}</h4>
+                <h4>Precio: {coche.precio}€</h4>
+                <h4>Nº de asientos: {coche.plazas}</h4>
+              </ul>
             );
           })}
         </ul>
