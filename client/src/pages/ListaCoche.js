@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAllCoches } from '../lib/coche.js';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Teachers = () => {
   const [cocheData, setCocheData] = useState([]);
@@ -17,6 +17,11 @@ const Teachers = () => {
   return (
     <main>
       <h1 className="Nombreprofe">Lista de Coches</h1>
+      <div className="action">
+        <button className="btn" type="button">
+          <Link to="/crearcoche">Crear un nuevo Coche</Link>
+        </button>
+      </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
           {cocheData.map((coche, i) => {
@@ -38,11 +43,3 @@ const Teachers = () => {
 };
 
 export default Teachers;
-
-/*
-      <div className="action">
-        <button className="btn" type="button">
-          <Link to="/crearcoche">Crear un nuevo Coche</Link>
-        </button>
-      </div>
-*/

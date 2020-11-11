@@ -4,3 +4,11 @@ export const getAllCoches = async () => {
   const response = await fetch(REACT_APP_URL + '/coche');
   return await response.json();
 };
+
+export const createNewCoche = async (coche, response) => {
+  await fetch(REACT_APP_URL + '/coche', {
+    method: 'POST',
+    body: JSON.stringify(coche),
+    headers: { 'Content-Type': 'application/json' },
+  });
+};
