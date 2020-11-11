@@ -12,3 +12,9 @@ export const createNewCoche = async (coche, response) => {
     headers: { 'Content-Type': 'application/json' },
   });
 };
+
+export const deleteCoche = async (id, response) => {
+  await fetch(REACT_APP_URL + '/coche/' + id, {
+    method: 'Delete',
+  });
+};
