@@ -1,0 +1,28 @@
+.crear-curso {
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  form {
+    width: 700px;
+
+    div {
+      margin: 32px 0;
+
+      textarea,
+      input {
+        width: 100%;
+      }
+
+      label {
+        width: 10ch;
+      }
+    }
+  }
+}
+
+.box select option {
+  padding: 30px;
+}

@@ -1,0 +1,49 @@
+.Wrap {
+  text-align: center;
+}
+.Cover {
+  margin-top: 5%;
+  margin-bottom: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.Titulo {
+  font-size: 300%;
+  color: black;
+  margin-right: 15%;
+}
+
+.Tag {
+  font-size: 1.5rem;
+  margin-top: 0%;
+  margin-bottom: 10%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.Portada {
+  height: auto;
+  width: 50%;
+  display: inline-block;
+  margin-right: 20%;
+  margin-top: 10%;
+}
+
+//botones
+
+.VcButton {
+  margin-left: 20%;
+  color: white;
+  background: #5900ff;
+  border: 1px solid #556699;
+  border-radius: 11px;
+  box-shadow: 0 1px #444444;
+  padding: 20px 45px;
+  display: inline-block;
+  font: normal bold 26px/1 'Open Sans', sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px #000000;
+  align-content: center;
+  text-decoration: none;
+}

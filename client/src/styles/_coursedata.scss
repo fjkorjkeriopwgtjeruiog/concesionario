@@ -1,0 +1,26 @@
+.Wrapper-flex {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+
+  .Wrapper {
+    flex: 1;
+
+    article {
+      display: flex;
+      align-items: center;
+
+
+      .Author {
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+
+        p {
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+}
