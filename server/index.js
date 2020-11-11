@@ -42,7 +42,7 @@ import {
 } from './data/otro.js';
 
 const app = express();
-const port = 2000;
+const port = 6000;
 
 app.use(express.json());
 app.use(function (req, res, next) {
