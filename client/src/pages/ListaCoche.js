@@ -42,9 +42,11 @@ const Teachers = () => {
                 <h4>Nº de asientos: {coche.plazas}</h4>
 
                 <l className="Wrapper-flex-profes">
-                  <button className="btn btn-edit" type="button">
-                    <Link to={'/cochemodificar/' + coche.id}>Modificar</Link>
-                  </button>
+                  <Link to={'/modificarcoche/' + coche.id}>
+                    <button className="btn btn-edit" type="button">
+                      Modificar
+                    </button>
+                  </Link>
                   <button
                     className="btn btn-edit"
                     type="button"
