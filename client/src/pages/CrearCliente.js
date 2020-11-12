@@ -33,24 +33,19 @@ const CrearCliente = () => {
       <form>
         <div>
           <label className="Label">Nombre:</label>
-          <input type="text" name="nombre" id="nombre" onChange={ajuNom} />
+          <input type="text" onChange={ajuNom} />
         </div>
 
         <div>
           <label>DNI:</label>
-          <input
-            className="identidad"
-            type="text"
-            name="dni"
-            id="dni"
-            maxlength="9"
-            onChange={ajuDni}
-          />
+          <input type="text" maxlength="9" onChange={ajuDni} />
         </div>
 
-        <button className="btn" type="button" onClick={introducecliente}>
-          <Link to="/cliente">Añadir Cliente</Link>
-        </button>
+        <Link to="/cliente">
+          <button className="btn" type="button" onClick={introducecliente}>
+            Añadir Cliente
+          </button>
+        </Link>
         <br />
       </form>
     </main>

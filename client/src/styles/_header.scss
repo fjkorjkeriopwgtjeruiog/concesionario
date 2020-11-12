@@ -85,3 +85,11 @@ h1 {
 .Menu .NavMenu .ElementNavMenu:hover > ul {
   display: block;
 }
+
+li:hover {
+  text-decoration: underline white;
+}
+
+li:active {
+  border: 1px solid white;
+}

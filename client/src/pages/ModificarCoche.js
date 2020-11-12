@@ -61,62 +61,34 @@ const ModificarCoche = () => {
       <form>
         <div>
           <label className="Label">Nombre:</label>
-          <input
-            type="text"
-            name="nombre"
-            id="nombre"
-            value={nom}
-            onChange={ajuNom}
-          />
+          <input type="text" value={nom} onChange={ajuNom} />
         </div>
 
         <div>
           <label>Fabricante:</label>
-          <input
-            type="text"
-            name="fabricante"
-            id="fabricante"
-            value={fab}
-            onChange={ajuFab}
-          />
+          <input type="text" value={fab} onChange={ajuFab} />
         </div>
 
         <div>
           <label>Año de fabricación:</label>
-          <input
-            type="text"
-            name="anno_fabricacion"
-            id="anno_fabricacion"
-            value={ann}
-            onChange={ajuAnn}
-          />
+          <input type="text" value={ann} onChange={ajuAnn} />
         </div>
 
         <div>
           <label>precio:</label>
-          <input
-            type="text"
-            name="precio"
-            id="precio"
-            value={pre}
-            onChange={ajuPre}
-          />
+          <input type="text" value={pre} onChange={ajuPre} />
         </div>
 
         <div>
           <label>Plazas:</label>
-          <input
-            type="text"
-            name="plazas"
-            id="plazas"
-            value={pla}
-            onChange={ajuPla}
-          ></input>
+          <input type="text" value={pla} onChange={ajuPla}></input>
         </div>
 
-        <button className="btn" type="button" onClick={modificacoche}>
-          <Link to="/coche">Modificar Coche</Link>
-        </button>
+        <Link to="/coche">
+          <button className="btn" type="button" onClick={modificacoche}>
+            Modificar Coche
+          </button>
+        </Link>
         <br />
       </form>
     </main>

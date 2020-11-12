@@ -19,6 +19,9 @@ const Header = () => {
           <li className="ElementNavMenu">
             <Link to="/empleado">Empleados</Link>
           </li>
+          <li className="ElementNavMenu">
+            <Link to="/tienda">Tiendas</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -8,6 +8,7 @@ import Inicio from '../pages/Inicio.js';
 import ListaCoche from '../pages/ListaCoche.js';
 import ListaCliente from '../pages/ListaCliente.js';
 import ListaEmpleado from '../pages/ListaEmpleado.js';
+import ListaTienda from '../pages/ListaTienda.js';
 import CrearCoche from '../pages/CrearCoche.js';
 import CrearCliente from '../pages/CrearCliente.js';
 import CrearEmpleado from '../pages/CrearEmpleado.js';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/coche" component={ListaCoche} />
           <Route path="/cliente" component={ListaCliente} />
           <Route path="/empleado" component={ListaEmpleado} />
+          <Route path="/tienda" component={ListaTienda} />
           <Route path="/crearcoche" component={CrearCoche} />
           <Route path="/crearcliente" component={CrearCliente} />
           <Route path="/crearempleado" component={CrearEmpleado} />
