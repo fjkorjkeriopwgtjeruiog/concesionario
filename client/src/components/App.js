@@ -16,6 +16,7 @@ import CrearTienda from '../pages/CrearTienda.js';
 import ModificarCoche from '../pages/ModificarCoche.js';
 import ModificarCliente from '../pages/ModificarCliente.js';
 import ModificarEmpleado from '../pages/ModificarEmpleado.js';
+import ModificarTienda from '../pages/ModificarTienda.js';
 import ErrorPage from '../pages/Error.js';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/modificarcoche/:id" component={ModificarCoche} />
           <Route path="/modificarcliente/:id" component={ModificarCliente} />
           <Route path="/modificarempleado/:id" component={ModificarEmpleado} />
+          <Route path="/modificartienda/:id" component={ModificarTienda} />
           <Route path="/*" component={ErrorPage} />
         </Switch>
         <Footer />
