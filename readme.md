@@ -32,3 +32,4 @@ Cada tienda estará ubicada en una ciudad, aunque una ciudad puede tener más de
 - Debes pulir los ficheros scss. Revisa como cambiar el tamaño de los input.
 - Internamente estas llamando "Tiendas" a los concesionarios. Puedes dejarlo así, pero en los textos que verá el usuario usarás mejor el termino "Concesionario", al ser más apropiado.
 - Algunas rutas del server no son usadas en la versión final del proyecto. Borralas.
+- Planteate si es necesario la página de inicio. Si no lo es, eliminala y usa de página de inicio la lista de los coches.

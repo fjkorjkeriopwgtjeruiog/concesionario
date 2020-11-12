@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateEmpleado, getEmpleado } from '../lib/empleado.js';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const ModificarEmpleado = () => {
   const [nom, setNom] = useState('');

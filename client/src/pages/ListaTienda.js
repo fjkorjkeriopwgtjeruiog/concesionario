@@ -38,7 +38,7 @@ const ListaTienda = () => {
               <ul className="lista-profe" key={i}>
                 <h2>{tienda.tienda}</h2>
                 <h4>Ciudad: {tienda.ciudad}</h4>
-                <h4>Año en el que se creo: {tienda.anno_construccion}€</h4>
+                <h4>Año en el que se creo: {tienda.anno_construccion}</h4>
                 <h4>Gerente: {tienda.gerente}</h4>
 
                 <l className="Wrapper-flex-profes">
