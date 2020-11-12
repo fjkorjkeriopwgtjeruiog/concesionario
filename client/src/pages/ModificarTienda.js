@@ -18,7 +18,6 @@ const ModificarTienda = () => {
     setNom(datos.nombre);
     setCiu(datos.ciudad);
     setCon(datos.anno_construccion);
-    setGer(datos.gerente);
 
     const dato = await getEmpleadosLibres();
     const esperada = await getEmpleado(datos.gerente);
@@ -54,7 +53,6 @@ const ModificarTienda = () => {
       ciudad: ciu,
       anno_construccion: con,
       gerente: ger,
-      fecha_contratacion: new Date(),
     };
     updateTienda(ti, id);
     alert('¡La tienda ha sido modificada!');
