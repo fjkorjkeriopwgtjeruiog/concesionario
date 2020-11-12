@@ -41,6 +41,7 @@ import {
   CompraReal,
   TiendaRealId,
   CompraRealId,
+  EmpleadoLibre,
 } from './data/otro.js';
 
 const app = express();
@@ -353,6 +354,16 @@ app.get('/tiendareal/:id', (req, res) => {
 
 app.get('/comprareal/:id', (req, res) => {
   CompraRealId(req.params.id)
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/espera', (req, res) => {
+  EmpleadoLibre()
     .then((response) => {
       res.status(200).send(response);
     })

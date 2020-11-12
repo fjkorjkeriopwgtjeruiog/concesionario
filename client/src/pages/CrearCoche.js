@@ -54,17 +54,17 @@ const CrearCoche = () => {
 
         <div>
           <label>Año de fabricación:</label>
-          <input type="text" onChange={ajuAnn} />
+          <input type="number" onChange={ajuAnn} />
         </div>
 
         <div>
           <label>precio:</label>
-          <input type="text" onChange={ajuPre} />
+          <input type="number" onChange={ajuPre} />
         </div>
 
         <div>
           <label>Plazas:</label>
-          <input type="text" onChange={ajuPla}></input>
+          <input type="number" onChange={ajuPla}></input>
         </div>
 
         <Link to="/coche">
