@@ -10,6 +10,11 @@ export const getEmpleado = async (id) => {
   return await response.json();
 };
 
+export const getEmpleadosLibres = async () => {
+  const response = await fetch(REACT_APP_URL + '/espera');
+  return await response.json();
+};
+
 export const createNewEmpleado = async (empleado, response) => {
   await fetch(REACT_APP_URL + '/empleado', {
     method: 'POST',

@@ -12,6 +12,7 @@ import ListaTienda from '../pages/ListaTienda.js';
 import CrearCoche from '../pages/CrearCoche.js';
 import CrearCliente from '../pages/CrearCliente.js';
 import CrearEmpleado from '../pages/CrearEmpleado.js';
+import CrearTienda from '../pages/CrearTienda.js';
 import ModificarCoche from '../pages/ModificarCoche.js';
 import ModificarCliente from '../pages/ModificarCliente.js';
 import ModificarEmpleado from '../pages/ModificarEmpleado.js';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/tienda" component={ListaTienda} />
           <Route path="/crearcoche" component={CrearCoche} />
           <Route path="/crearcliente" component={CrearCliente} />
+          <Route path="/creartienda" component={CrearTienda} />
           <Route path="/crearempleado" component={CrearEmpleado} />
           <Route path="/modificarcoche/:id" component={ModificarCoche} />
           <Route path="/modificarcliente/:id" component={ModificarCliente} />

@@ -56,3 +56,17 @@ export const CompraRealId = (id) => {
     );
   });
 };
+
+export const EmpleadoLibre = () => {
+  return new Promise(function (resolve, reject) {
+    pool.query(
+      'select id, nombre from empleado where id not in (select gerente from tienda)',
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(results.rows);
+      },
+    );
+  });
+};
