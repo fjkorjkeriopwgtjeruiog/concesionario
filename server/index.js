@@ -35,14 +35,14 @@ import {
   updateCompra,
   deleteCompra,
   createCompra,
-} from './data/compra.js';
+} from './data/compras.js';
 import {
   TiendaReal,
   CompraReal,
   TiendaRealId,
   CompraRealId,
   EmpleadoLibre,
-} from './data/otro.js';
+} from './data/otros.js';
 
 const app = express();
 const port = 5001;
