@@ -25,9 +25,11 @@ const ListaCoche = () => {
     <main>
       <h1 className="Nombreprofe">Lista de Coches</h1>
       <div className="action">
-        <button className="btn" type="button">
-          <Link to="/crearcoche">Crear un nuevo Coche</Link>
-        </button>
+        <Link to="/crearcoche">
+          <button className="btn" type="button">
+            Crear un nuevo Coche
+          </button>
+        </Link>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
