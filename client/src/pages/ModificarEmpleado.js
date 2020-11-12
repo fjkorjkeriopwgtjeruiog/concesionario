@@ -65,13 +65,7 @@ const ModificarEmpleado = () => {
 
         <div>
           <label>DNI:</label>
-          <input
-            className="identidad"
-            type="text"
-            maxlength="9"
-            value={dni}
-            onChange={ajuDni}
-          />
+          <input type="text" maxlength="9" value={dni} onChange={ajuDni} />
         </div>
 
         <div>
@@ -79,9 +73,11 @@ const ModificarEmpleado = () => {
           <input type="text" value={ciu} onChange={ajuCiu} />
         </div>
 
-        <button className="btn" type="button" onClick={modificaempleado}>
-          <Link to="/empleado">Modificar Empleado</Link>
-        </button>
+        <Link to="/empleado">
+          <button className="btn" type="button" onClick={modificaempleado}>
+            Modificar Empleado
+          </button>
+        </Link>
         <br />
       </form>
     </main>

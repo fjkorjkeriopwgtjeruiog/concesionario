@@ -10,9 +10,11 @@ const Inicio = () => {
         <br />
         Sea cual sea el coche que estes buscando, ¡Aquí lo encontrarás!
       </p>
-      <button className="VcButton" onClick="#">
-        <Link to="/coche">Lista de Coches</Link>
-      </button>
+      <Link to="/coche">
+        <button className="VcButton" onClick="#">
+          Lista de Coches
+        </button>
+      </Link>
     </main>
   );
 };

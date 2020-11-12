@@ -44,47 +44,34 @@ const CrearCoche = () => {
       <form>
         <div>
           <label className="Label">Nombre:</label>
-          <input type="text" name="nombre" id="nombre" onChange={ajuNom} />
+          <input type="text" onChange={ajuNom} />
         </div>
 
         <div>
           <label>Fabricante:</label>
-          <input
-            type="text"
-            name="fabricante"
-            id="fabricante"
-            onChange={ajuFab}
-          />
+          <input type="text" onChange={ajuFab} />
         </div>
 
         <div>
           <label>Año de fabricación:</label>
-          <input
-            type="text"
-            name="anno_fabricacion"
-            id="anno_fabricacion"
-            onChange={ajuAnn}
-          />
+          <input type="text" onChange={ajuAnn} />
         </div>
 
         <div>
           <label>precio:</label>
-          <input type="text" name="precio" id="precio" onChange={ajuPre} />
+          <input type="text" onChange={ajuPre} />
         </div>
 
         <div>
           <label>Plazas:</label>
-          <input
-            type="text"
-            name="plazas"
-            id="plazas"
-            onChange={ajuPla}
-          ></input>
+          <input type="text" onChange={ajuPla}></input>
         </div>
 
-        <button className="btn" type="button" onClick={introducecoche}>
-          <Link to="/coche">Crear Coche</Link>
-        </button>
+        <Link to="/coche">
+          <button className="btn" type="button" onClick={introducecoche}>
+            Crear Coche
+          </button>
+        </Link>
         <br />
       </form>
     </main>

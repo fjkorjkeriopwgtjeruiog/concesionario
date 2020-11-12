@@ -43,30 +43,19 @@ const ModificarCliente = () => {
       <form>
         <div>
           <label className="Label">Nombre:</label>
-          <input
-            type="text"
-            name="nombre"
-            id="nombre"
-            value={nom}
-            onChange={ajuNom}
-          />
+          <input type="text" value={nom} onChange={ajuNom} />
         </div>
 
         <div>
           <label>DNI:</label>
-          <input
-            type="text"
-            name="dni"
-            id="dni"
-            maxlength="9"
-            value={dni}
-            onChange={ajuDni}
-          />
+          <input type="text" maxlength="9" value={dni} onChange={ajuDni} />
         </div>
 
-        <button className="btn" type="button" onClick={modificacliente}>
-          <Link to="/cliente">Modificar Cliente</Link>
-        </button>
+        <Link to="/cliente">
+          <button className="btn" type="button" onClick={modificacliente}>
+            Modificar Cliente
+          </button>
+        </Link>
         <br />
       </form>
     </main>

@@ -46,7 +46,7 @@ const CrearEmpleado = () => {
       <form>
         <div>
           <label className="Label">Nombre:</label>
-          <input type="text" name="nombre" id="nombre" onChange={ajuNom} />
+          <input type="text" onChange={ajuNom} />
         </div>
 
         <div>
@@ -56,12 +56,7 @@ const CrearEmpleado = () => {
 
         <div>
           <label>DNI:</label>
-          <input
-            className="identidad"
-            type="text"
-            maxlength="9"
-            onChange={ajuDni}
-          />
+          <input type="text" maxlength="9" onChange={ajuDni} />
         </div>
 
         <div>
@@ -69,9 +64,11 @@ const CrearEmpleado = () => {
           <input type="text" onChange={ajuCiu} />
         </div>
 
-        <button className="btn" type="button" onClick={introduceempleado}>
-          <Link to="/empleado">Contratar Empleado</Link>
-        </button>
+        <Link to="/empleado">
+          <button className="btn" type="button" onClick={introduceempleado}>
+            Contratar Empleado
+          </button>
+        </Link>
         <br />
       </form>
     </main>
