@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllCoches, deleteCoche } from '../lib/coche.js';
 import { Link } from 'react-router-dom';
 
-const Teachers = () => {
+const ListaCoche = () => {
   const [cocheData, setCocheData] = useState([]);
 
   const fetchAllCoches = async () => {
@@ -65,4 +65,4 @@ const Teachers = () => {
   );
 };
 
-export default Teachers;
+export default ListaCoche;

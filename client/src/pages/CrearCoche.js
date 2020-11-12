@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const CrearCoche = () => {
   const [nom, setNom] = useState('');
   const [fab, setFab] = useState('');
-  const [ann, setAnn] = useState('');
-  const [pre, setPre] = useState();
-  const [pla, setPla] = useState();
+  const [ann, setAnn] = useState(0);
+  const [pre, setPre] = useState(0);
+  const [pla, setPla] = useState(0);
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
