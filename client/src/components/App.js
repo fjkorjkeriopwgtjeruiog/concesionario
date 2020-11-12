@@ -7,6 +7,7 @@ import Footer from './Footer.js';
 import Inicio from '../pages/Inicio.js';
 import ListaCoche from '../pages/ListaCoche.js';
 import ListaCliente from '../pages/ListaCliente.js';
+import ListaEmpleado from '../pages/ListaEmpleado.js';
 import CrearCoche from '../pages/CrearCoche.js';
 import CrearCliente from '../pages/CrearCliente.js';
 import ModificarCoche from '../pages/ModificarCoche.js';
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/" component={Inicio} />
           <Route path="/coche" component={ListaCoche} />
           <Route path="/cliente" component={ListaCliente} />
+          <Route path="/empleado" component={ListaEmpleado} />
           <Route path="/crearcoche" component={CrearCoche} />
           <Route path="/crearcliente" component={CrearCliente} />
           <Route path="/modificarcoche/:id" component={ModificarCoche} />
