@@ -25,9 +25,11 @@ const ListaEmpleado = () => {
     <main>
       <h1 className="Nombreprofe">Lista de Empleados</h1>
       <div className="action">
-        <button className="btn" type="button">
-          <Link to="/crearcliente">Contratar a un nuevo Empleado</Link>
-        </button>
+        <Link to="/crearempleado">
+          <button className="btn" type="button">
+            Contratar a un nuevo Empleado
+          </button>
+        </Link>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
