@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 const ModificarCoche = () => {
   const [nom, setNom] = useState('');
   const [fab, setFab] = useState('');
-  const [ann, setAnn] = useState('');
-  const [pre, setPre] = useState();
-  const [pla, setPla] = useState();
+  const [ann, setAnn] = useState(0);
+  const [pre, setPre] = useState(0);
+  const [pla, setPla] = useState(0);
 
   const { id } = useParams();
 
-  const fetchCoche = async () => {
+  const fetchCoche = async (id) => {
     const data = await getCoche(id);
     const datos = data[0]; // Los datos son devueltos como un array, por lo que hay que arreglarlo.
     setNom(datos.nombre);
@@ -23,8 +23,8 @@ const ModificarCoche = () => {
   };
 
   useEffect(() => {
-    fetchCoche();
-  }, []);
+    fetchCoche(id);
+  }, [id]);
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -51,7 +51,7 @@ const ModificarCoche = () => {
       plazas: pla,
     };
     updateCoche(co, id);
-    alert('¡Los datos del coche ha sido modificados con exito!');
+    alert('¡Los datos del coche han sido modificados con exito!');
   };
 
   return (
@@ -114,12 +114,7 @@ const ModificarCoche = () => {
           ></input>
         </div>
 
-        <button
-          className="btn"
-          type="button"
-          value={pre}
-          onClick={modificacoche}
-        >
+        <button className="btn" type="button" onClick={modificacoche}>
           <Link to="/coche">Modificar Coche</Link>
         </button>
         <br />

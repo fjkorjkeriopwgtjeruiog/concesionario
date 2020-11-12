@@ -48,16 +48,10 @@ export const createEmpleado = (body) => {
 
 export const updateEmpleado = (body, id) => {
   return new Promise(function (resolve, reject) {
-    const {
-      nombre,
-      fecha_nacimiento,
-      dni,
-      ciudad_natal,
-      fecha_contratacion,
-    } = body;
+    const { nombre, fecha_nacimiento, dni, ciudad_natal } = body;
     pool.query(
-      'UPDATE empleado SET nombre=$1, fecha_nacimiento=$2, dni=$3, ciudad_natal=$4, fecha_contratacion=$5 WHERE id=$6',
-      [nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion, id],
+      'UPDATE empleado SET nombre=$1, fecha_nacimiento=$2, dni=$3, ciudad_natal=$4 WHERE id=$5',
+      [nombre, fecha_nacimiento, dni, ciudad_natal, id],
       (error, results) => {
         if (error) {
           reject(error);

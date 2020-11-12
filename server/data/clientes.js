@@ -42,10 +42,10 @@ export const createCliente = (body) => {
 
 export const updateCliente = (body, id) => {
   return new Promise(function (resolve, reject) {
-    const { nombre, dni, fecha_registro } = body;
+    const { nombre, dni } = body;
     pool.query(
-      'UPDATE cliente SET nombre=$1, dni=$2, fecha_registro=$3 WHERE id=$4',
-      [nombre, dni, fecha_registro, id],
+      'UPDATE cliente SET nombre=$1, dni=$2 WHERE id=$3',
+      [nombre, dni, id],
       (error, results) => {
         if (error) {
           reject(error);
