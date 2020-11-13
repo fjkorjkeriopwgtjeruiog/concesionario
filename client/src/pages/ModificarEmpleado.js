@@ -56,12 +56,12 @@ const ModificarEmpleado = () => {
 
       <form>
         <div>
-          <label className="Label">Nombre:</label>
+          <label>Nombre:</label>
           <input type="text" value={nom} onChange={ajuNom} />
         </div>
 
         <div>
-          <label className="Label">Fecha de nacimiento:</label>
+          <label>Fecha de nacimiento:</label>
           <input type="date" value={nac} onChange={ajuNac} />
         </div>
 
@@ -77,7 +77,7 @@ const ModificarEmpleado = () => {
         </div>
 
         <div>
-          <label className="Label">Ciudad Natal:</label>
+          <label>Ciudad Natal:</label>
           <input type="text" value={ciu} onChange={ajuCiu} />
         </div>
 

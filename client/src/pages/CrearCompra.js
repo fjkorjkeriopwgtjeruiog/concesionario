@@ -76,7 +76,7 @@ const CrearCompra = () => {
 
       <form>
         <div>
-          <label className="Label">Coche:</label>
+          <label>Coche:</label>
           <select onChange={ajuCoc}>
             {cocp.map((g) => {
               return (
@@ -89,7 +89,7 @@ const CrearCompra = () => {
         </div>
 
         <div>
-          <label className="Label">Cliente:</label>
+          <label>Cliente:</label>
           <select onChange={ajuCli}>
             {clip.map((g) => {
               return <option value={g.id}>{g.nombre}</option>;
@@ -98,7 +98,7 @@ const CrearCompra = () => {
         </div>
 
         <div>
-          <label className="Label">Empleado:</label>
+          <label>Empleado:</label>
           <select onChange={ajuEmp}>
             {empp.map((g) => {
               return <option value={g.id}>{g.nombre}</option>;
@@ -107,7 +107,7 @@ const CrearCompra = () => {
         </div>
 
         <div>
-          <label className="Label">Concesionario:</label>
+          <label>Concesionario:</label>
           <select onChange={ajuTie}>
             {tiep.map((g) => {
               return <option value={g.id}>{g.tienda}</option>;

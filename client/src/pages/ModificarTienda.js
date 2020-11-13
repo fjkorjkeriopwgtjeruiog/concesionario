@@ -64,12 +64,12 @@ const ModificarTienda = () => {
 
       <form>
         <div>
-          <label className="Label">Nombre:</label>
+          <label>Nombre:</label>
           <input type="text" value={nom} onChange={ajuNom} />
         </div>
 
         <div>
-          <label className="Label">Ciudad donde se encuentra:</label>
+          <label>Ciudad donde se encuentra:</label>
           <input type="text" value={ciu} onChange={ajuCiu} />
         </div>
 
@@ -79,7 +79,7 @@ const ModificarTienda = () => {
         </div>
 
         <div>
-          <label className="Label">Gerente:</label>
+          <label>Gerente:</label>
           <select value={ger} onChange={ajuGer}>
             {gerentes.map((g) => {
               return <option value={g.id}>{g.nombre}</option>;

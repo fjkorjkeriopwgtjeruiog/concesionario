@@ -4,7 +4,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+
+  border: 5px solid rgb(71, 106, 139);
+  background-color: rgba(71, 106, 139, 0.8);
+
   form {
     width: 700px;
 
@@ -15,17 +18,15 @@
       input {
         width: 100%;
       }
-    
+
       label {
         width: 10ch;
+        color: whitesmoke;
       }
     }
   }
-
-  
 }
 
 .box select option {
   padding: 30px;
 }
-

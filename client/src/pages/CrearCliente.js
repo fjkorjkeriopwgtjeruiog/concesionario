@@ -32,7 +32,7 @@ const CrearCliente = () => {
 
       <form>
         <div>
-          <label className="Label">Nombre:</label>
+          <label>Nombre:</label>
           <input type="text" onChange={ajuNom} />
         </div>
 

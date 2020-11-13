@@ -60,7 +60,7 @@ const ModificarCoche = () => {
 
       <form>
         <div>
-          <label className="Label">Nombre:</label>
+          <label>Nombre:</label>
           <input type="text" value={nom} onChange={ajuNom} />
         </div>
 
