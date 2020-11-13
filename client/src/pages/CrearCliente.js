@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { createCliente } from '../lib/cliente.js';
 import { Link } from 'react-router-dom';
+import { revisar } from '../funciones.js';
 
 const CrearCliente = () => {
   const [nom, setNom] = useState('');
-  const [dni, setDni] = useState('');
+  const [dni, setDni] = useState(10000000);
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -13,9 +14,8 @@ const CrearCliente = () => {
     setDni(event.currentTarget.value);
   };
 
-  const introducecliente = () => {
-    if (dni.length < 9) alert('¡DNI inválido!');
-    else {
+  const introducecliente = async () => {
+    if (await revisar(dni)) {
       const cl = {
         nombre: nom,
         dni: dni,
@@ -38,7 +38,13 @@ const CrearCliente = () => {
 
         <div>
           <label>DNI:</label>
-          <input type="text" maxlength="9" onChange={ajuDni} />
+          <input
+            type="number"
+            min="10000000"
+            max="99999999"
+            value={dni}
+            onChange={ajuDni}
+          />
         </div>
 
         <Link to="/cliente">

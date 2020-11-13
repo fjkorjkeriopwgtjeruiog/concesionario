@@ -28,11 +28,10 @@ export const CompraReal = () => {
   });
 };
 
-export const TiendaRealId = (id) => {
+export const EmpleadoLibre = () => {
   return new Promise(function (resolve, reject) {
     pool.query(
-      'select tienda.id, tienda.nombre as tienda, ciudad, anno_construccion, empleado.nombre as gerente from tienda, empleado where tienda.id=$1 and gerente=empleado.id order by tienda.id',
-      [id],
+      'select id, nombre from empleado where id not in (select gerente from tienda)',
       (error, results) => {
         if (error) {
           reject(error);
@@ -43,24 +42,10 @@ export const TiendaRealId = (id) => {
   });
 };
 
-export const CompraRealId = (id) => {
-  var espacio = ' ';
+export const DNILocalizado = () => {
   return new Promise(function (resolve, reject) {
     pool.query(
-      'select compra.id, fabricante || $1 || coche.nombre as coche, cliente.nombre as cliente, empleado.nombre as empleado, tienda.nombre as tienda, fecha from compra, coche, cliente, empleado, tienda where compra.id=$2 and coche.id=coche and cliente.id=cliente and empleado.id=empleado and tienda.id=tienda order by compra.id',
-      [espacio, id],
-      (error, results) => {
-        if (error) reject(error);
-        resolve(results.rows);
-      },
-    );
-  });
-};
-
-export const EmpleadoLibre = () => {
-  return new Promise(function (resolve, reject) {
-    pool.query(
-      'select id, nombre from empleado where id not in (select gerente from tienda)',
+      'select cliente.dni as cliente, empleado.dni as empleado from empleado full join cliente on empleado.id=cliente.id',
       (error, results) => {
         if (error) {
           reject(error);

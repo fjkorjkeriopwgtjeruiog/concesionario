@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllEmpleados, deleteEmpleado } from '../lib/empleado.js';
 import { Link } from 'react-router-dom';
+import { nif } from '../funciones.js';
 
 const ListaEmpleado = () => {
   const [empleadoData, setEmpleadoData] = useState([]);
@@ -38,7 +39,7 @@ const ListaEmpleado = () => {
               <ul className="lista-profe" key={i}>
                 <h2>{empleado.nombre}</h2>
                 <h4>Fecha de nacimiento: {empleado.fecha_nacimiento}</h4>
-                <h4>DNI: {empleado.dni}</h4>
+                <h4>NIF: {nif(empleado.dni)}</h4>
                 <h4>Ciudad natal: {empleado.ciudad_natal}</h4>
                 <h4>Fecha de Contratación: {empleado.fecha_contratacion}</h4>
 

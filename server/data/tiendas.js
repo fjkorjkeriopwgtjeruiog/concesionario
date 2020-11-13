@@ -1,16 +1,5 @@
 import pool from '../base.js';
 
-export const getTiendas = () => {
-  return new Promise(function (resolve, reject) {
-    pool.query('SELECT * FROM tienda ORDER BY id', (error, results) => {
-      if (error) {
-        reject(error);
-      }
-      resolve(results.rows);
-    });
-  });
-};
-
 export const getTiendaId = (id) => {
   return new Promise(function (resolve, reject) {
     pool.query('SELECT * FROM tienda WHERE id = $1', [id], (error, results) => {

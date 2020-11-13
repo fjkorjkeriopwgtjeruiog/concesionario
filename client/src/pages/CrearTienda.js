@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createTienda } from '../lib/tienda.js';
 import { getEmpleadosLibres } from '../lib/empleado.js';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const CrearTienda = () => {
   const [nom, setNom] = useState('');
@@ -29,11 +29,10 @@ const CrearTienda = () => {
   const fetchAllEmpleados = async () => {
     const data = await getEmpleadosLibres();
     partido(data);
-    if (data.length === 0)
-      alert(
-        '¡No quedan más empleados que puedan dirigir nuestros concesionarios!',
-      );
-    else setGer(data[0].id); // Le damos un valor predeterminado.
+    if (data.length === 0) {
+      alert('¡No queda ningún empleado que pueda dirigir el concesionario!');
+      return <Redirect to="/tienda" />;
+    } else setGer(data[0].id); // Le damos un valor predeterminado.
   };
 
   useEffect(() => {

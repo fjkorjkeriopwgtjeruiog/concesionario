@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { updateCliente, getCliente } from '../lib/cliente.js';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { revisar } from '../funciones.js';
 
 const ModificarCliente = () => {
   const [nom, setNom] = useState('');
-  const [dni, setDni] = useState('');
+  const [dni, setDni] = useState(10000000);
 
   const { id } = useParams();
 
@@ -27,13 +28,15 @@ const ModificarCliente = () => {
     setDni(event.currentTarget.value);
   };
 
-  const modificacliente = () => {
-    const cl = {
-      nombre: nom,
-      dni: dni,
-    };
-    updateCliente(cl, id);
-    alert('¡Los datos del cliente han sido actualizados correctamente!');
+  const modificacliente = async () => {
+    if (await revisar(dni)) {
+      const cl = {
+        nombre: nom,
+        dni: dni,
+      };
+      updateCliente(cl, id);
+      alert('¡Los datos del cliente han sido actualizados correctamente!');
+    }
   };
 
   return (
@@ -48,7 +51,13 @@ const ModificarCliente = () => {
 
         <div>
           <label>DNI:</label>
-          <input type="text" maxlength="9" value={dni} onChange={ajuDni} />
+          <input
+            type="number"
+            min="10000000"
+            max="99999999"
+            value={dni}
+            onChange={ajuDni}
+          />
         </div>
 
         <Link to="/cliente">

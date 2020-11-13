@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { createEmpleado } from '../lib/empleado.js';
 import { Link } from 'react-router-dom';
+import { revisar } from '../funciones.js';
 
 const CrearEmpleado = () => {
   const [nom, setNom] = useState('');
   const [nac, setNac] = useState('');
-  const [dni, setDni] = useState('');
+  const [dni, setDni] = useState(10000000);
   const [ciu, setCiu] = useState('');
 
   const ajuNom = (event) => {
@@ -24,9 +25,8 @@ const CrearEmpleado = () => {
     setCiu(event.currentTarget.value);
   };
 
-  const introduceempleado = () => {
-    if (dni.length < 9) alert('¡DNI no válido!');
-    else {
+  const introduceempleado = async () => {
+    if (await revisar(dni)) {
       const em = {
         nombre: nom,
         fecha_nacimiento: nac,
@@ -56,7 +56,13 @@ const CrearEmpleado = () => {
 
         <div>
           <label>DNI:</label>
-          <input type="text" maxlength="9" onChange={ajuDni} />
+          <input
+            type="number"
+            min="10000000"
+            max="99999999"
+            value={dni}
+            onChange={ajuDni}
+          />
         </div>
 
         <div>
