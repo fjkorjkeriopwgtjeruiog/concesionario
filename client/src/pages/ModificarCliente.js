@@ -29,7 +29,7 @@ const ModificarCliente = () => {
   };
 
   const modificacliente = async () => {
-    if (await revisar(dni)) {
+    if (await revisar(dni, 0)) {
       const cl = {
         nombre: nom,
         dni: dni,

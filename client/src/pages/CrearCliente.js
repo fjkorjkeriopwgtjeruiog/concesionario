@@ -15,7 +15,7 @@ const CrearCliente = () => {
   };
 
   const introducecliente = async () => {
-    if (await revisar(dni)) {
+    if (await revisar(dni, 1)) {
       const cl = {
         nombre: nom,
         dni: dni,
