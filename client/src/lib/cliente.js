@@ -31,3 +31,8 @@ export const deleteCliente = async (id, response) => {
     method: 'Delete',
   });
 };
+
+export const localizaDNI = async () => {
+  const response = await fetch(REACT_APP_URL + '/dni');
+  return await response.json();
+};

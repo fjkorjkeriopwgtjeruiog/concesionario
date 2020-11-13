@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { updateEmpleado, getEmpleado } from '../lib/empleado.js';
 import { useParams, Link } from 'react-router-dom';
+import { revisar } from '../funciones.js';
 
 const ModificarEmpleado = () => {
   const [nom, setNom] = useState('');
   const [nac, setNac] = useState('');
-  const [dni, setDni] = useState('');
+  const [dni, setDni] = useState(10000000);
   const [ciu, setCiu] = useState('');
 
   const { id } = useParams();
@@ -36,15 +37,17 @@ const ModificarEmpleado = () => {
     setCiu(event.currentTarget.value);
   };
 
-  const modificaempleado = () => {
-    const em = {
-      nombre: nom,
-      fecha_nacimiento: nac,
-      dni: dni,
-      ciudad_natal: ciu,
-    };
-    updateEmpleado(em, id);
-    alert('¡Los datos del empleado han sido modificados!');
+  const modificaempleado = async () => {
+    if (await revisar(dni)) {
+      const em = {
+        nombre: nom,
+        fecha_nacimiento: nac,
+        dni: dni,
+        ciudad_natal: ciu,
+      };
+      updateEmpleado(em, id);
+      alert('¡Los datos del empleado han sido modificados!');
+    }
   };
 
   return (
@@ -64,7 +67,13 @@ const ModificarEmpleado = () => {
 
         <div>
           <label>DNI:</label>
-          <input type="text" maxlength="9" value={dni} onChange={ajuDni} />
+          <input
+            type="number"
+            min="10000000"
+            max="99999999"
+            value={dni}
+            onChange={ajuDni}
+          />
         </div>
 
         <div>

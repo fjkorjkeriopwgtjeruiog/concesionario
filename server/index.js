@@ -23,14 +23,12 @@ import {
   createCliente,
 } from './data/clientes.js';
 import {
-  getTiendas,
   getTiendaId,
   updateTienda,
   deleteTienda,
   createTienda,
 } from './data/tiendas.js';
 import {
-  getCompras,
   getCompraId,
   updateCompra,
   deleteCompra,
@@ -39,9 +37,8 @@ import {
 import {
   TiendaReal,
   CompraReal,
-  TiendaRealId,
-  CompraRealId,
   EmpleadoLibre,
+  DNILocalizado,
 } from './data/otros.js';
 
 const app = express();
@@ -218,16 +215,6 @@ app.delete('/cliente/:id', (req, res) => {
 
 // Datos de las tiendas.
 
-app.get('/tienda', (req, res) => {
-  getTiendas()
-    .then((response) => {
-      res.status(200).send(response);
-    })
-    .catch((error) => {
-      res.status(500).send(error);
-    });
-});
-
 app.get('/tienda/:id', (req, res) => {
   getTiendaId(req.params.id)
     .then((response) => {
@@ -269,16 +256,6 @@ app.delete('/tienda/:id', (req, res) => {
 });
 
 // Datos de las compras.
-
-app.get('/compra', (req, res) => {
-  getCompras()
-    .then((response) => {
-      res.status(200).send(response);
-    })
-    .catch((error) => {
-      res.status(500).send(error);
-    });
-});
 
 app.get('/compra/:id', (req, res) => {
   getCompraId(req.params.id)
@@ -342,28 +319,18 @@ app.get('/comprareal', (req, res) => {
     });
 });
 
-app.get('/tiendareal/:id', (req, res) => {
-  TiendaRealId(req.params.id)
-    .then((response) => {
-      res.status(200).send(response);
-    })
-    .catch((error) => {
-      res.status(500).send(error);
-    });
-});
-
-app.get('/comprareal/:id', (req, res) => {
-  CompraRealId(req.params.id)
-    .then((response) => {
-      res.status(200).send(response);
-    })
-    .catch((error) => {
-      res.status(500).send(error);
-    });
-});
-
 app.get('/espera', (req, res) => {
   EmpleadoLibre()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
+app.get('/dni', (req, res) => {
+  DNILocalizado()
     .then((response) => {
       res.status(200).send(response);
     })

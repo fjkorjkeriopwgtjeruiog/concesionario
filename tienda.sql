@@ -19,24 +19,24 @@ insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas) values('pet
 create table cliente(
   id serial primary key,
   nombre varchar,
-  dni char(9),
+  dni integer,
   fecha_registro date
 );
 
-insert into cliente (nombre, dni, fecha_registro) values('Paco Monales','39011210u','2010-02-25');
-insert into cliente (nombre, dni, fecha_registro) values('Laura Gimenez','90518271q','2018-04-17');
+insert into cliente (nombre, dni, fecha_registro) values('Paco Monales',39011210,'2010-02-25');
+insert into cliente (nombre, dni, fecha_registro) values('Laura Gimenez',90518271,'2018-04-17');
 
 create table empleado(
   id serial primary key,
   nombre varchar,
   fecha_nacimiento date,
-  dni char(9),
+  dni integer,
   ciudad_natal varchar,
   fecha_contratacion date
 );
 
-insert into empleado (nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion) values('Miguel Torero','1990-01-01','45121098g','Cadiz','2015-10-03');
-insert into empleado (nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion) values('Mike Bastones','1995-02-17','10293456z','Chiclana','2012-03-08');
+insert into empleado (nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion) values('Miguel Torero','1990-01-01',45121098,'Cadiz','2015-10-03');
+insert into empleado (nombre, fecha_nacimiento, dni, ciudad_natal, fecha_contratacion) values('Mike Bastones','1995-02-17',10293456,'Chiclana','2012-03-08');
 
 create table tienda(
   id serial primary key,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllClientes, deleteCliente } from '../lib/cliente.js';
 import { Link } from 'react-router-dom';
+import { nif } from '../funciones.js';
 
 const ListaCliente = () => {
   const [clienteData, setClienteData] = useState([]);
@@ -37,7 +38,7 @@ const ListaCliente = () => {
             return (
               <ul className="lista-profe" key={i}>
                 <h2>{cliente.nombre}</h2>
-                <h4>DNI: {cliente.dni}</h4>
+                <h4>NIF: {nif(cliente.dni)}</h4>
                 <h4>Fecha de Registro: {cliente.fecha_registro}</h4>
 
                 <l className="Wrapper-flex-profes">
