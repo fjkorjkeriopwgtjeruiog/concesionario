@@ -10,7 +10,7 @@ export const getCliente = async (id) => {
   return await response.json();
 };
 
-export const createNewCliente = async (coche, response) => {
+export const createCliente = async (coche, response) => {
   await fetch(REACT_APP_URL + '/cliente', {
     method: 'POST',
     body: JSON.stringify(coche),

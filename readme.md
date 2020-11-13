@@ -34,5 +34,3 @@ Cada tienda estará ubicada en una ciudad, aunque una ciudad puede tener más de
 - Internamente llamas "Compra" a la lista de los coches vendidos. Puedes dejarlo así, pero en los textos que verá el usuario debes usar el termino "Ventas", pues es la cadena de concesionarios la que esta vendiendo los coches.
 - Algunas rutas del server no son usadas en la versión final del proyecto. Borralas.
 - Planteate si es necesario la página de inicio. Si no lo es, eliminala y usa de página de inicio la lista de los coches.
-- Revisa que no haya un signo '€' que no sea el del precio de los coches.
-- Las funciones "CreateNew(tabla)" renombralas a solamente "Create(tabla)".

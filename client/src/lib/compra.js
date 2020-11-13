@@ -10,7 +10,7 @@ export const getCompra = async (id) => {
   return await response.json();
 };
 
-export const createNewCompra = async (compra, response) => {
+export const createCompra = async (compra, response) => {
   await fetch(REACT_APP_URL + '/compra', {
     method: 'POST',
     body: JSON.stringify(compra),

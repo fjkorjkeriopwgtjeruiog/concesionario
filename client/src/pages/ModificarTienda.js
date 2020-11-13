@@ -55,12 +55,12 @@ const ModificarTienda = () => {
       gerente: ger,
     };
     updateTienda(ti, id);
-    alert('¡La tienda ha sido modificada!');
+    alert('¡El concesionario ha sido modificado!');
   };
 
   return (
     <main className="crear-profe">
-      <h2>Introduzca los datos actualizados de la tienda</h2>
+      <h2>Introduzca los datos actualizados del concesionario</h2>
 
       <form>
         <div>
@@ -89,7 +89,7 @@ const ModificarTienda = () => {
 
         <Link to="/tienda">
           <button className="btn" type="button" onClick={modificatienda}>
-            Modificar Tienda
+            Modificar Concesionario
           </button>
         </Link>
         <br />

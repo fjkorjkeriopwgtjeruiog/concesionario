@@ -18,16 +18,16 @@ const ListaCompra = () => {
     const id = event.currentTarget.value;
     await deleteCompra(id);
     fetchAllCompras();
-    alert('¡La compra ha sido cancelada!');
+    alert('¡La venta ha sido anulada!');
   };
 
   return (
     <main>
-      <h1 className="Nombreprofe">Lista de Compras</h1>
+      <h1 className="Nombreprofe">Lista de Ventas</h1>
       <div className="action">
         <Link to="/crearcompra">
           <button className="btn" type="button">
-            Incluir una nueva Compra
+            Incluir una nueva Venta
           </button>
         </Link>
       </div>
@@ -36,7 +36,7 @@ const ListaCompra = () => {
           {compraData.map((compra, i) => {
             return (
               <ul className="lista-profe" key={i}>
-                <h2>Compra {compra.id}</h2>
+                <h2>Venta {compra.id}</h2>
                 <h4>Coche: {compra.coche}</h4>
                 <h4>Comprador: {compra.cliente}</h4>
                 <h4>Vendedor: {compra.empleado}</h4>

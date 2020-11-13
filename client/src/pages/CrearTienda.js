@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { createNewTienda } from '../lib/tienda.js';
+import { createTienda } from '../lib/tienda.js';
 import { getEmpleadosLibres } from '../lib/empleado.js';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +30,9 @@ const CrearTienda = () => {
     const data = await getEmpleadosLibres();
     partido(data);
     if (data.length === 0)
-      alert('¡No quedan más empleados que puedan dirigir nuestras tiendas!');
+      alert(
+        '¡No quedan más empleados que puedan dirigir nuestros concesionarios!',
+      );
     else setGer(data[0].id); // Le damos un valor predeterminado.
   };
 
@@ -46,13 +48,13 @@ const CrearTienda = () => {
       gerente: ger,
       fecha_contratacion: new Date(),
     };
-    createNewTienda(ti);
-    alert('¡La tienda ha sido añadida!');
+    createTienda(ti);
+    alert('¡El concesionario ha sido añadido!');
   };
 
   return (
     <main className="crear-profe">
-      <h2>Introduzca los datos de la nueva tienda</h2>
+      <h2>Introduzca los datos del nuevo concesionario</h2>
 
       <form>
         <div>
@@ -81,7 +83,7 @@ const CrearTienda = () => {
 
         <Link to="/tienda">
           <button className="btn" type="button" onClick={introducetienda}>
-            Añadir Tienda
+            Añadir Concesionario
           </button>
         </Link>
         <br />

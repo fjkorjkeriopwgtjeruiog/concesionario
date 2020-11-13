@@ -71,12 +71,12 @@ const ModificarCompra = () => {
       tienda: tie,
     };
     updateCompra(co, id);
-    alert('¡La compra se ha modificado con exito!');
+    alert('¡La venta se ha modificado con exito!');
   };
 
   return (
     <main className="crear-profe">
-      <h2>Modifique los datos de la compra</h2>
+      <h2>Modifique los datos de la venta</h2>
 
       <form>
         <div>
@@ -111,7 +111,7 @@ const ModificarCompra = () => {
         </div>
 
         <div>
-          <label className="Label">Tienda:</label>
+          <label className="Label">Concesionario:</label>
           <select value={tie} onChange={ajuTie}>
             {tiep.map((g) => {
               return <option value={g.id}>{g.tienda}</option>;
@@ -121,7 +121,7 @@ const ModificarCompra = () => {
 
         <Link to="/compra">
           <button className="btn" type="button" onClick={modificatienda}>
-            Modificar Compra
+            Modificar Venta
           </button>
         </Link>
         <br />
