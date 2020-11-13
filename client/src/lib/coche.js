@@ -10,7 +10,7 @@ export const getCoche = async (id) => {
   return await response.json();
 };
 
-export const createNewCoche = async (coche, response) => {
+export const createCoche = async (coche, response) => {
   await fetch(REACT_APP_URL + '/coche', {
     method: 'POST',
     body: JSON.stringify(coche),

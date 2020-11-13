@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createNewCliente } from '../lib/cliente.js';
+import { createCliente } from '../lib/cliente.js';
 import { Link } from 'react-router-dom';
 
 const CrearCliente = () => {
@@ -21,7 +21,7 @@ const CrearCliente = () => {
         dni: dni,
         fecha_registro: new Date(),
       };
-      createNewCliente(cl);
+      createCliente(cl);
       alert('¡El cliente ha sido registrado con exito!');
     }
   };

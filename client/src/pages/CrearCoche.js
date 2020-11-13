@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createNewCoche } from '../lib/coche.js';
+import { createCoche } from '../lib/coche.js';
 import { Link } from 'react-router-dom';
 
 const CrearCoche = () => {
@@ -33,7 +33,7 @@ const CrearCoche = () => {
       precio: pre,
       plazas: pla,
     };
-    createNewCoche(co);
+    createCoche(co);
     alert('¡El coche ha sido creado correctamente!');
   };
 

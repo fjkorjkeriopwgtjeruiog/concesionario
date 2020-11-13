@@ -10,7 +10,7 @@ export const getTienda = async (id) => {
   return await response.json();
 };
 
-export const createNewTienda = async (tienda, response) => {
+export const createTienda = async (tienda, response) => {
   await fetch(REACT_APP_URL + '/tienda', {
     method: 'POST',
     body: JSON.stringify(tienda),

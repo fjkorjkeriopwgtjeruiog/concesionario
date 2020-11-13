@@ -15,7 +15,7 @@ export const getEmpleadosLibres = async () => {
   return await response.json();
 };
 
-export const createNewEmpleado = async (empleado, response) => {
+export const createEmpleado = async (empleado, response) => {
   await fetch(REACT_APP_URL + '/empleado', {
     method: 'POST',
     body: JSON.stringify(empleado),

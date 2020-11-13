@@ -20,10 +20,10 @@ const Header = () => {
             <Link to="/empleado">Empleados</Link>
           </li>
           <li className="ElementNavMenu">
-            <Link to="/tienda">Tiendas</Link>
+            <Link to="/tienda">Concesionarios</Link>
           </li>
           <li className="ElementNavMenu">
-            <Link to="/compra">Compras</Link>
+            <Link to="/compra">Ventas</Link>
           </li>
         </ul>
       </nav>

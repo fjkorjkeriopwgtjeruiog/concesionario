@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { createNewCompra } from '../lib/compra.js';
+import { createCompra } from '../lib/compra.js';
 import { Link } from 'react-router-dom';
 
 // Sacamos las anteriores listas creadas hasta ahora.
@@ -66,13 +66,13 @@ const CrearCompra = () => {
       tienda: tie,
       fecha: new Date(),
     };
-    createNewCompra(co);
-    alert('¡La compra se ha realizado con exito!');
+    createCompra(co);
+    alert('¡La venta se ha realizado con exito!');
   };
 
   return (
     <main className="crear-profe">
-      <h2>Introduzca los datos de la compra</h2>
+      <h2>Introduzca los datos de la venta</h2>
 
       <form>
         <div>
@@ -107,7 +107,7 @@ const CrearCompra = () => {
         </div>
 
         <div>
-          <label className="Label">Tienda:</label>
+          <label className="Label">Concesionario:</label>
           <select onChange={ajuTie}>
             {tiep.map((g) => {
               return <option value={g.id}>{g.tienda}</option>;
@@ -117,7 +117,7 @@ const CrearCompra = () => {
 
         <Link to="/compra">
           <button className="btn" type="button" onClick={introducetienda}>
-            Añadir Compra
+            Añadir Venta
           </button>
         </Link>
         <br />

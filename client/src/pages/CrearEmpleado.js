@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createNewEmpleado } from '../lib/empleado.js';
+import { createEmpleado } from '../lib/empleado.js';
 import { Link } from 'react-router-dom';
 
 const CrearEmpleado = () => {
@@ -34,7 +34,7 @@ const CrearEmpleado = () => {
         ciudad_natal: ciu,
         fecha_contratacion: new Date(),
       };
-      createNewEmpleado(em);
+      createEmpleado(em);
       alert('¡El empleado ha sido contratado!');
     }
   };
