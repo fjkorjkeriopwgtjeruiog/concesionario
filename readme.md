@@ -29,6 +29,3 @@ Cada tienda estará ubicada en una ciudad, aunque una ciudad puede tener más de
 - Crea una variable para los coches que muestre una foto. Eso te obligará a mejorar tu formulario para poder meter imagenes.
 - Crearás una variable 'deuda' para los clientes. Al vender un coche, no permitirás la venta de coches a clientes que deban dinero, y si la venta se realiza con exito, el precio del coche pasará a ser la deuda a saldar de dicho cliente, lo que obviamente significa que no podrá ese cliente comprar un segundo coche hasta que pague por completo el primero.
 - Debes pulir los ficheros scss. Revisa como cambiar el tamaño de los input.
-- Internamente estas llamando "Tiendas" a los concesionarios. Puedes dejarlo así, pero en los textos que verá el usuario usarás mejor el termino "Concesionario", al ser más apropiado.
-- Internamente llamas "Compra" a la lista de los coches vendidos. Puedes dejarlo así, pero en los textos que verá el usuario debes usar el termino "Ventas", pues es la cadena de concesionarios la que esta vendiendo los coches.
-- Planteate si es necesario la página de inicio. Si no lo es, eliminala y usa de página de inicio la lista de los coches.

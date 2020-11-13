@@ -31,7 +31,7 @@ export function nif(n) {
 }
 
 // Comprobamos que el DNI cumpla las reglas.
-export const revisar = async (d) => {
+export const revisar = async (d, crea) => {
   if (d > 99999999) {
     alert('¡Ese DNI es demasiado largo!');
     return false;
@@ -48,6 +48,12 @@ export const revisar = async (d) => {
     vector.push(dni.cliente - d);
     vector.push(dni.empleado - d);
   });
+
+  // Si la función fue llamada para modificar, perdorará el propio dni de la persona a modificar.
+  if (!crea) {
+    const rer = vector.indexOf(0);
+    if (rer > -1) vector.splice(rer, 1);
+  }
 
   if (vector.indexOf(0) > -1) {
     alert('¡Ese DNI ya esta siendo usado!');

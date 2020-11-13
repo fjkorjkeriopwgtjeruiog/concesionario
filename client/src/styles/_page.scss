@@ -1,15 +1,5 @@
-.page {
-  flex: 1 auto;
-  padding: 0 1.25rem;
-
-  &.error {
-    animation: flash 1s infinite alternate linear;
-  }
-}
-
-@keyframes flash {
-  to {
-    background-color: red;
-    color: white;
-  }
+body {
+  background: url('../images/58.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

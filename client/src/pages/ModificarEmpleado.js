@@ -38,7 +38,7 @@ const ModificarEmpleado = () => {
   };
 
   const modificaempleado = async () => {
-    if (await revisar(dni)) {
+    if (await revisar(dni, 0)) {
       const em = {
         nombre: nom,
         fecha_nacimiento: nac,

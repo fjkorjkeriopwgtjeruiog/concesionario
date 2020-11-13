@@ -26,7 +26,7 @@ const CrearEmpleado = () => {
   };
 
   const introduceempleado = async () => {
-    if (await revisar(dni)) {
+    if (await revisar(dni, 1)) {
       const em = {
         nombre: nom,
         fecha_nacimiento: nac,
