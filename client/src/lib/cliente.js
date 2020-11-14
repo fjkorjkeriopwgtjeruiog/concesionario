@@ -15,18 +15,18 @@ export const getCliente = async (id) => {
   return await response.json();
 };
 
-export const createCliente = async (coche, response) => {
+export const createCliente = async (cliente, response) => {
   await fetch(REACT_APP_URL + '/cliente', {
     method: 'POST',
-    body: JSON.stringify(coche),
+    body: JSON.stringify(cliente),
     headers: { 'Content-Type': 'application/json' },
   });
 };
 
-export const updateCliente = async (coche, id, response) => {
+export const updateCliente = async (cliente, id, response) => {
   await fetch(REACT_APP_URL + '/cliente/' + id, {
     method: 'PUT',
-    body: JSON.stringify(coche),
+    body: JSON.stringify(cliente),
     headers: { 'Content-Type': 'application/json' },
   });
 };

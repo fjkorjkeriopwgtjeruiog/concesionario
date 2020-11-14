@@ -17,7 +17,7 @@ export const getClientes = () => {
 export const getClienteDatos = () => {
   return new Promise(function (resolve, reject) {
     pool.query(
-      'SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, sum(precio) as gastado FROM compra, coche, cliente WHERE coche.id=coche AND cliente=cliente.id GROUP BY cliente.id ORDER BY id',
+      'SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, sum(precio) as gastado FROM compra JOIN coche ON coche.id=coche RIGHT JOIN cliente ON cliente.id=cliente GROUP BY cliente.id ORDER BY cliente.id',
       (error, results) => {
         if (error) {
           reject(error);
