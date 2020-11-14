@@ -10,11 +10,12 @@ create table coche(
   fabricante varchar,
   anno_fabricacion integer,
   precio integer,
-  plazas integer
+  plazas integer,
+  foto varchar unique
 );
 
-insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas) values('ignis','suzuki',2017,17000,8);
-insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas) values('petroska','motorola',2010,9000,4);
+insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas,foto) values('ignis','suzuki',2017,17000,8,'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg/1200px-2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg');
+insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas,foto) values('petroska','motorola',2010,9000,4,'https://imagenes-cdn.autofacil.es/multimedia/fotos/2018/11/15/143067/preview2col_mg.jpg?t=1542284524000');
 
 create table cliente(
   id serial primary key,
