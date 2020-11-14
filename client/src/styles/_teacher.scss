@@ -7,9 +7,16 @@
 }
 
 .Nombreprofe {
-  margin-left: 14.5%;
+  margin-left: 14%;
   font-size: 2rem;
   text-decoration: underline;
+  width: 300px;
+  border: 5px solid rgb(71, 106, 139);
+  background-color: rgba(71, 106, 139, 0.85);
+  color: whitesmoke;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
 .Wrapper-flex-profes {
@@ -31,6 +38,10 @@
       padding: 5%;
       border-radius: 8px;
       box-shadow: 0 2px 4px #333;
+
+      h2 {
+        text-decoration: underline;
+      }
     }
   }
 }

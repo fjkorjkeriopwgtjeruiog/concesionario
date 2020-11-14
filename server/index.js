@@ -17,6 +17,7 @@ import {
 } from './data/coches.js';
 import {
   getClientes,
+  getClienteDatos,
   getClienteId,
   updateCliente,
   deleteCliente,
@@ -163,6 +164,16 @@ app.delete('/coche/:id', (req, res) => {
 
 // Datos de los clientes.
 
+app.get('/clientedatos', (req, res) => {
+  getClienteDatos()
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+});
+
 app.get('/cliente', (req, res) => {
   getClientes()
     .then((response) => {
@@ -299,7 +310,7 @@ app.delete('/compra/:id', (req, res) => {
 
 // Funciones especiales.
 
-app.get('/tiendareal', (req, res) => {
+app.get('/tienda', (req, res) => {
   TiendaReal()
     .then((response) => {
       res.status(200).send(response);
@@ -309,7 +320,7 @@ app.get('/tiendareal', (req, res) => {
     });
 });
 
-app.get('/comprareal', (req, res) => {
+app.get('/compra', (req, res) => {
   CompraReal()
     .then((response) => {
       res.status(200).send(response);

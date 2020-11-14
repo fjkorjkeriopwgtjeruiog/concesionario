@@ -27,5 +27,4 @@ Cada tienda estará ubicada en una ciudad, aunque una ciudad puede tener más de
 
 - Deberías a la hora de crear una venta impedirle vender coches a empleados que sean gerentes, a no ser que el coche sea vendido en la tienda que está actualmente dirigiendo.
 - Crea una variable para los coches que muestre una foto. Eso te obligará a mejorar tu formulario para poder meter imagenes.
-- Crearás una variable 'deuda' para los clientes. Al vender un coche, no permitirás la venta de coches a clientes que deban dinero, y si la venta se realiza con exito, el precio del coche pasará a ser la deuda a saldar de dicho cliente, lo que obviamente significa que no podrá ese cliente comprar un segundo coche hasta que pague por completo el primero.
 - Debes pulir los ficheros scss. Revisa como cambiar el tamaño de los input.

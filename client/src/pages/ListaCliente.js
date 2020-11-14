@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAllClientes, deleteCliente } from '../lib/cliente.js';
+import { getAllClientela, deleteCliente } from '../lib/cliente.js';
 import { Link } from 'react-router-dom';
 import { nif } from '../funciones.js';
 
@@ -7,7 +7,7 @@ const ListaCliente = () => {
   const [clienteData, setClienteData] = useState([]);
 
   const fetchAllClientes = async () => {
-    const data = await getAllClientes();
+    const data = await getAllClientela();
     setClienteData(data);
   };
 
@@ -40,7 +40,7 @@ const ListaCliente = () => {
                 <h2>{cliente.nombre}</h2>
                 <h4>NIF: {nif(cliente.dni)}</h4>
                 <h4>Fecha de Registro: {cliente.fecha_registro}</h4>
-
+                <h4>Dinero gastado: {cliente.gastado}</h4>
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcliente/' + cliente.id}>
                     <button className="btn btn-edit" type="button">

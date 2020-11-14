@@ -8,6 +8,22 @@
   border: 5px solid rgb(71, 106, 139);
   background-color: rgba(71, 106, 139, 0.8);
 
+  margin-left: 600px;
+  margin-right: 600px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+
+  h2 {
+    color: white;
+    text-decoration: underline;
+  }
+
+  button {
+    text-align: center;
+    position: relative;
+    left: 35%;
+  }
+
   form {
     width: 700px;
 
@@ -25,8 +41,4 @@
       }
     }
   }
-}
-
-.box select option {
-  padding: 30px;
 }

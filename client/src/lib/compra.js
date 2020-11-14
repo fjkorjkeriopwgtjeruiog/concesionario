@@ -1,7 +1,7 @@
 const { REACT_APP_URL } = process.env;
 
 export const getAllCompras = async () => {
-  const response = await fetch(REACT_APP_URL + '/comprareal');
+  const response = await fetch(REACT_APP_URL + '/compra');
   return await response.json();
 };
 
