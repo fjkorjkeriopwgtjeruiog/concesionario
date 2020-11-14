@@ -3,7 +3,9 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <p>Realizado exclusivamente por Daniel Pareja</p>
+      <br />
+      <br />
+      Realizado exclusivamente por Daniel Pareja
     </footer>
   );
 };
