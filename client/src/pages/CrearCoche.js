@@ -8,6 +8,7 @@ const CrearCoche = () => {
   const [ann, setAnn] = useState(0);
   const [pre, setPre] = useState(0);
   const [pla, setPla] = useState(0);
+  const [fot, setFot] = useState('');
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -24,6 +25,9 @@ const CrearCoche = () => {
   const ajuPla = (event) => {
     setPla(event.currentTarget.value);
   };
+  const ajuFot = (event) => {
+    setFot(event.currentTarget.value);
+  };
 
   const introducecoche = () => {
     const co = {
@@ -32,6 +36,7 @@ const CrearCoche = () => {
       anno_fabricacion: ann,
       precio: pre,
       plazas: pla,
+      foto: fot,
     };
     createCoche(co);
     alert('¡El coche ha sido creado correctamente!');
@@ -65,6 +70,11 @@ const CrearCoche = () => {
         <div>
           <label>Plazas:</label>
           <input type="number" onChange={ajuPla}></input>
+        </div>
+
+        <div>
+          <label>Foto:</label>
+          <input type="text" onChange={ajuFot} />
         </div>
 
         <Link to="/coche">

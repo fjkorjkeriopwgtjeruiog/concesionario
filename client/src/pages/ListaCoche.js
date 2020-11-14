@@ -36,6 +36,7 @@ const ListaCoche = () => {
           {cocheData.map((coche, i) => {
             return (
               <ul className="lista-profe" key={i}>
+                <img src={coche.foto} alt={'Error'} />
                 <h2>
                   {coche.fabricante} {coche.nombre}
                 </h2>

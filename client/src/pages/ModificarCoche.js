@@ -9,6 +9,7 @@ const ModificarCoche = () => {
   const [ann, setAnn] = useState(0);
   const [pre, setPre] = useState(0);
   const [pla, setPla] = useState(0);
+  const [fot, setFot] = useState('');
 
   const { id } = useParams();
 
@@ -20,6 +21,7 @@ const ModificarCoche = () => {
     setAnn(datos.anno_fabricacion);
     setPre(datos.precio);
     setPla(datos.plazas);
+    setFot(datos.foto);
   };
 
   useEffect(() => {
@@ -41,6 +43,9 @@ const ModificarCoche = () => {
   const ajuPla = (event) => {
     setPla(event.currentTarget.value);
   };
+  const ajuFot = (event) => {
+    setFot(event.currentTarget.value);
+  };
 
   const modificacoche = () => {
     const co = {
@@ -49,6 +54,7 @@ const ModificarCoche = () => {
       anno_fabricacion: ann,
       precio: pre,
       plazas: pla,
+      foto: fot,
     };
     updateCoche(co, id);
     alert('¡Los datos del coche han sido modificados con exito!');
@@ -82,6 +88,11 @@ const ModificarCoche = () => {
         <div>
           <label>Plazas:</label>
           <input type="text" value={pla} onChange={ajuPla}></input>
+        </div>
+
+        <div>
+          <label>Foto:</label>
+          <input type="text" value={fot} onChange={ajuFot} />
         </div>
 
         <Link to="/coche">
