@@ -2,12 +2,29 @@ import pool from '../base.js';
 
 export const getClientes = () => {
   return new Promise(function (resolve, reject) {
-    pool.query('SELECT * FROM cliente ORDER BY id', (error, results) => {
-      if (error) {
-        reject(error);
-      }
-      resolve(results.rows);
-    });
+    pool.query(
+      'SELECT id, nombre FROM cliente ORDER BY id',
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(results.rows);
+      },
+    );
+  });
+};
+
+export const getClienteDatos = () => {
+  return new Promise(function (resolve, reject) {
+    pool.query(
+      'SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, sum(precio) as gastado FROM compra, coche, cliente WHERE coche.id=coche AND cliente=cliente.id GROUP BY cliente.id ORDER BY id',
+      (error, results) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(results.rows);
+      },
+    );
   });
 };
 

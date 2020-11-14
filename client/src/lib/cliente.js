@@ -1,5 +1,10 @@
 const { REACT_APP_URL } = process.env;
 
+export const getAllClientela = async () => {
+  const response = await fetch(REACT_APP_URL + '/clientedatos');
+  return await response.json();
+};
+
 export const getAllClientes = async () => {
   const response = await fetch(REACT_APP_URL + '/cliente');
   return await response.json();
