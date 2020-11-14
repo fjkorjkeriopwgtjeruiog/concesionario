@@ -5,9 +5,7 @@ export const getClientes = () => {
     pool.query(
       'SELECT id, nombre FROM cliente ORDER BY id',
       (error, results) => {
-        if (error) {
-          reject(error);
-        }
+        if (error) reject(error);
         resolve(results.rows);
       },
     );
@@ -17,11 +15,9 @@ export const getClientes = () => {
 export const getClienteDatos = () => {
   return new Promise(function (resolve, reject) {
     pool.query(
-      'SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, sum(precio) as gastado FROM compra JOIN coche ON coche.id=coche RIGHT JOIN cliente ON cliente.id=cliente GROUP BY cliente.id ORDER BY cliente.id',
+      'SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, COALESCE(SUM(precio), 0) as gastado FROM compra JOIN coche ON coche.id=coche RIGHT JOIN cliente ON cliente.id=cliente GROUP BY cliente.id ORDER BY cliente.id;',
       (error, results) => {
-        if (error) {
-          reject(error);
-        }
+        if (error) reject(error);
         resolve(results.rows);
       },
     );
@@ -48,9 +44,7 @@ export const createCliente = (body) => {
       'INSERT INTO cliente (nombre, dni, fecha_registro) VALUES ($1, $2, $3)',
       [nombre, dni, fecha_registro],
       (error, results) => {
-        if (error) {
-          reject(error);
-        }
+        if (error) reject(error);
         resolve(`¡Cliente añadido con exito!`);
       },
     );
@@ -64,9 +58,7 @@ export const updateCliente = (body, id) => {
       'UPDATE cliente SET nombre=$1, dni=$2 WHERE id=$3',
       [nombre, dni, id],
       (error, results) => {
-        if (error) {
-          reject(error);
-        }
+        if (error) reject(error);
         resolve(`¡Los datos del cliente se han actualizado!`);
       },
     );
@@ -76,9 +68,7 @@ export const updateCliente = (body, id) => {
 export const deleteCliente = (id) => {
   return new Promise(function (resolve, reject) {
     pool.query('DELETE FROM cliente WHERE id = $1', [id], (error, results) => {
-      if (error) {
-        reject(error);
-      }
+      if (error) reject(error);
       resolve(`¡Cliente eliminado!`);
     });
   });

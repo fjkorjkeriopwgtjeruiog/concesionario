@@ -16,9 +16,7 @@ export const createCompra = (body) => {
       'INSERT INTO compra (coche, cliente, empleado, tienda, fecha) VALUES ($1, $2, $3, $4, $5)',
       [coche, cliente, empleado, tienda, fecha],
       (error, results) => {
-        if (error) {
-          reject(error);
-        }
+        if (error) reject(error);
         resolve(`¡Compra añadida con exito!`);
       },
     );
@@ -32,9 +30,7 @@ export const updateCompra = (body, id) => {
       'UPDATE compra SET coche=$1, cliente=$2, empleado=$3, tienda=$4, fecha=$5 WHERE id=$6',
       [coche, cliente, empleado, tienda, fecha, id],
       (error, results) => {
-        if (error) {
-          reject(error);
-        }
+        if (error) reject(error);
         resolve(`¡Los datos de la compra se han actualizado!`);
       },
     );
@@ -44,9 +40,7 @@ export const updateCompra = (body, id) => {
 export const deleteCompra = (id) => {
   return new Promise(function (resolve, reject) {
     pool.query('DELETE FROM compra WHERE id = $1', [id], (error, results) => {
-      if (error) {
-        reject(error);
-      }
+      if (error) reject(error);
       resolve(`¡Compra eliminada!`);
     });
   });

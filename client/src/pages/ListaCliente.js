@@ -8,10 +8,6 @@ const ListaCliente = () => {
 
   const fetchAllClientes = async () => {
     const data = await getAllClientela();
-    data.forEach((d) => {
-      // Si un cliente no ha comprado coches, tendrá este valor nulo, por lo que hay que hacer una corrección.
-      if (d.gastado === null) d.gastado = 0;
-    });
     setClienteData(data);
   };
 
