@@ -8,6 +8,10 @@ const ListaCliente = () => {
 
   const fetchAllClientes = async () => {
     const data = await getAllClientela();
+    data.forEach((d) => {
+      // Si un cliente no ha comprado coches, tendrá este valor nulo, por lo que hay que hacer una corrección.
+      if (d.gastado === null) d.gastado = 0;
+    });
     setClienteData(data);
   };
 
@@ -40,7 +44,7 @@ const ListaCliente = () => {
                 <h2>{cliente.nombre}</h2>
                 <h4>NIF: {nif(cliente.dni)}</h4>
                 <h4>Fecha de Registro: {cliente.fecha_registro}</h4>
-                <h4>Dinero gastado: {cliente.gastado}</h4>
+                <h4>Dinero gastado: {cliente.gastado}€</h4>
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcliente/' + cliente.id}>
                     <button className="btn btn-edit" type="button">

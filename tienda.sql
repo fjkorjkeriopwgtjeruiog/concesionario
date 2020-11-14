@@ -63,3 +63,6 @@ insert into compra (coche,cliente,empleado,tienda,fecha) values(2,2,2,1,'2020-07
 
 select tienda.nombre,ciudad,anno_construccion,empleado.nombre from tienda join empleado on gerente=empleado.id;
 select coche.fabricante||' '||coche.nombre as vehiculo, cliente.nombre, empleado.nombre, tienda.nombre, fecha from compra, coche, cliente, empleado, tienda where coche.id=coche and cliente.id=cliente and empleado.id=empleado and tienda.id=tienda;
+SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, sum(precio) as gastado FROM compra, coche, cliente WHERE coche.id=coche AND cliente=cliente.id GROUP BY UNION ALL cliente.id ORDER BY cliente.id;
+
+SELECT cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, sum(precio) as gastado FROM compra JOIN coche ON coche.id=coche RIGHT JOIN cliente ON cliente.id=cliente GROUP BY cliente.id ORDER BY cliente.id;
