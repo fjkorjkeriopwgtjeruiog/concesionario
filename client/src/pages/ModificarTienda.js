@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { updateTienda, getTienda } from '../lib/tienda.js';
 import { getEmpleadosLibres, getEmpleado } from '../lib/empleado.js';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ModificarTienda = () => {
   const [nom, setNom] = useState('');
@@ -56,6 +56,7 @@ const ModificarTienda = () => {
     };
     updateTienda(ti, id);
     alert('¡El concesionario ha sido modificado!');
+    window.location.replace('/tienda');
   };
 
   return (
@@ -87,11 +88,9 @@ const ModificarTienda = () => {
           </select>
         </div>
 
-        <Link to="/tienda">
-          <button className="btn" type="button" onClick={modificatienda}>
-            Modificar Concesionario
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={modificatienda}>
+          Modificar Concesionario
+        </button>
         <br />
       </form>
     </main>

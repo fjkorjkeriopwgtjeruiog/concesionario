@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateCompra, getCompra } from '../lib/compra.js';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // Sacamos las anteriores listas creadas hasta ahora.
 import { getAllClientes } from '../lib/cliente.js';
@@ -72,6 +72,7 @@ const ModificarCompra = () => {
     };
     updateCompra(co, id);
     alert('¡La venta se ha modificado con exito!');
+    window.location.replace('/compra');
   };
 
   return (
@@ -119,11 +120,9 @@ const ModificarCompra = () => {
           </select>
         </div>
 
-        <Link to="/compra">
-          <button className="btn" type="button" onClick={modificatienda}>
-            Modificar Venta
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={modificatienda}>
+          Modificar Venta
+        </button>
         <br />
       </form>
     </main>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateCoche, getCoche } from '../lib/coche.js';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 const ModificarCoche = () => {
   const [nom, setNom] = useState('');
@@ -58,6 +57,7 @@ const ModificarCoche = () => {
     };
     updateCoche(co, id);
     alert('¡Los datos del coche han sido modificados con exito!');
+    window.location.replace('/coche');
   };
 
   return (
@@ -95,11 +95,9 @@ const ModificarCoche = () => {
           <input type="text" value={fot} onChange={ajuFot} />
         </div>
 
-        <Link to="/coche">
-          <button className="btn" type="button" onClick={modificacoche}>
-            Modificar Coche
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={modificacoche}>
+          Modificar Coche
+        </button>
         <br />
       </form>
     </main>
