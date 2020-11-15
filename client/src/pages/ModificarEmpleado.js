@@ -15,9 +15,17 @@ const ModificarEmpleado = () => {
     const data = await getEmpleado(id);
     const datos = data[0];
     setNom(datos.nombre);
-    setNac(datos.fecha_nacimiento);
     setDni(datos.dni);
     setCiu(datos.ciudad_natal);
+    // Por disonancias con el formato de la fecha, necesitamos correcciones.
+    const f = new Date(datos.fecha_nacimiento);
+    let d = f.getDate();
+    if (d < 10) d = '0' + String(d);
+    let m = f.getMonth() + 1;
+    if (m < 10) m = '0' + String(m);
+    const a = f.getFullYear();
+    const c = a + '-' + m + '-' + d;
+    setNac(c);
   };
 
   useEffect(() => {

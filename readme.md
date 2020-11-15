@@ -25,7 +25,7 @@ Cada tienda estará ubicada en una ciudad, aunque una ciudad puede tener más de
 
 ## Avanzado
 
-- Aún queda corregir fallas al redirigir rutas y al modificar fechas en un formulario.
+- Aún queda corregir fallas al redirigir rutas.
 - Deberías a la hora de crear una venta impedirle vender coches a empleados que sean gerentes, a no ser que el coche sea vendido en la tienda que está actualmente dirigiendo.
 - Crea una variable para los coches que muestre una foto. Eso te obligará a mejorar tu formulario para poder meter imagenes.
 - Debes pulir los ficheros scss. Revisa como cambiar el tamaño de los input.
