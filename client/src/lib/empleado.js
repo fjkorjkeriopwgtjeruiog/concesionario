@@ -15,20 +15,22 @@ export const getEmpleadosLibres = async () => {
   return await response.json();
 };
 
-export const createEmpleado = async (empleado, response) => {
+export const createEmpleado = async (empleado, callback, response) => {
   await fetch(REACT_APP_URL + '/empleado', {
     method: 'POST',
     body: JSON.stringify(empleado),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback();
 };
 
-export const updateEmpleado = async (empleado, id, response) => {
+export const updateEmpleado = async (empleado, id, callback, response) => {
   await fetch(REACT_APP_URL + '/empleado/' + id, {
     method: 'PUT',
     body: JSON.stringify(empleado),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback();
 };
 
 export const deleteEmpleado = async (id, response) => {

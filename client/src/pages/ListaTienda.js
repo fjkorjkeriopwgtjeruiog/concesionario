@@ -23,7 +23,7 @@ const ListaTienda = () => {
 
   return (
     <main>
-      <h1 className="Nombreprofe">Lista de Concesionarios</h1>
+      <h1 className="Nombre Tienda">Lista de Concesionarios</h1>
       <div className="action">
         <Link to="/creartienda">
           <button className="btn" type="button">

@@ -15,20 +15,22 @@ export const getCliente = async (id) => {
   return await response.json();
 };
 
-export const createCliente = async (cliente, response) => {
+export const createCliente = async (cliente, callback, response) => {
   await fetch(REACT_APP_URL + '/cliente', {
     method: 'POST',
     body: JSON.stringify(cliente),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback();
 };
 
-export const updateCliente = async (cliente, id, response) => {
+export const updateCliente = async (cliente, id, callback, response) => {
   await fetch(REACT_APP_URL + '/cliente/' + id, {
     method: 'PUT',
     body: JSON.stringify(cliente),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback();
 };
 
 export const deleteCliente = async (id, response) => {

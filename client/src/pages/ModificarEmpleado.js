@@ -53,9 +53,10 @@ const ModificarEmpleado = () => {
         dni: dni,
         ciudad_natal: ciu,
       };
-      updateEmpleado(em, id);
-      alert('¡Los datos del empleado han sido modificados!');
-      window.location.replace('/empleado');
+      updateEmpleado(em, id, function () {
+        alert('¡Los datos del empleado han sido modificados!');
+        window.location.replace('/empleado');
+      });
     }
   };
 

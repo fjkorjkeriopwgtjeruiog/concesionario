@@ -46,9 +46,10 @@ const CrearTienda = () => {
       gerente: ger,
       fecha_contratacion: new Date(),
     };
-    createTienda(ti);
-    alert('¡El concesionario ha sido añadido!');
-    window.location.replace('/tienda');
+    createTienda(ti, function () {
+      alert('¡El concesionario ha sido añadido!');
+      window.location.replace('/tienda');
+    });
   };
 
   return (

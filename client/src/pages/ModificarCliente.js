@@ -33,9 +33,10 @@ const ModificarCliente = () => {
         nombre: nom,
         dni: dni,
       };
-      updateCliente(cl, id);
-      alert('¡Los datos del cliente han sido actualizados correctamente!');
-      window.location.replace('/cliente');
+      updateCliente(cl, id, function () {
+        alert('¡Los datos del cliente han sido actualizados correctamente!');
+        window.location.replace('/cliente');
+      });
     }
   };
 

@@ -24,7 +24,7 @@ const ListaEmpleado = () => {
 
   return (
     <main>
-      <h1 className="Nombreprofe">Lista de Empleados</h1>
+      <h1 className="Nombre Empleado">Lista de Empleados</h1>
       <div className="action">
         <Link to="/crearempleado">
           <button className="btn" type="button">

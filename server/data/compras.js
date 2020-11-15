@@ -25,10 +25,10 @@ export const createCompra = (body) => {
 
 export const updateCompra = (body, id) => {
   return new Promise(function (resolve, reject) {
-    const { coche, cliente, empleado, tienda, fecha } = body;
+    const { coche, cliente, empleado, tienda } = body;
     pool.query(
-      'UPDATE compra SET coche=$1, cliente=$2, empleado=$3, tienda=$4, fecha=$5 WHERE id=$6',
-      [coche, cliente, empleado, tienda, fecha, id],
+      'UPDATE compra SET coche=$1, cliente=$2, empleado=$3, tienda=$4 WHERE id=$5',
+      [coche, cliente, empleado, tienda, id],
       (error, results) => {
         if (error) reject(error);
         resolve(`¡Los datos de la compra se han actualizado!`);
