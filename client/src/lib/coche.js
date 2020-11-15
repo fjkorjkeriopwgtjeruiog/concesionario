@@ -10,12 +10,13 @@ export const getCoche = async (id) => {
   return await response.json();
 };
 
-export const createCoche = async (coche, response) => {
+export const createCoche = async (coche, response, callback) => {
   await fetch(REACT_APP_URL + '/coche', {
     method: 'POST',
     body: JSON.stringify(coche),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback(); // Esto asegura que sea ya cuando se introduzcan los datos que seas redirigido.
 };
 
 export const updateCoche = async (coche, id, response) => {

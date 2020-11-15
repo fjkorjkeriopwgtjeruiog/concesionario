@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 const Inicio = () => {
   return (
     <main className="Wrap">
-      <h1>¡Bienvenido a los Concesionarios Max!</h1>
+      <h1>
+        <u>¡Bienvenido a los Concesionarios Max!</u>
+      </h1>
       <p>
         ¿Buscas un coche de última gama? ¿Uno barato? ¿Uno con mucho espacio?
         <br />

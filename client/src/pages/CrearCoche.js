@@ -37,9 +37,10 @@ const CrearCoche = () => {
       plazas: pla,
       foto: fot,
     };
-    createCoche(co);
-    alert('¡El coche ha sido creado correctamente!');
-    window.location.replace('/coche');
+    createCoche(co, function () {
+      alert('¡El coche ha sido creado correctamente!');
+      window.location.replace('/coche');
+    });
   };
 
   return (

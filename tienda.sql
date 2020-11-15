@@ -63,5 +63,5 @@ insert into compra (coche,cliente,empleado,tienda,fecha) values(1,1,1,1,'2020-02
 insert into compra (coche,cliente,empleado,tienda,fecha) values(2,2,2,1,'2020-07-12');
 
 select tienda.nombre,ciudad,anno_construccion,empleado.nombre from tienda join empleado on gerente=empleado.id;
-select coche.fabricante||' '||coche.nombre as vehiculo, cliente.nombre, empleado.nombre, tienda.nombre, fecha from compra, coche, cliente, empleado, tienda where coche.id=coche and cliente.id=cliente and empleado.id=empleado and tienda.id=tienda;
+select coche.fabricante||' '||coche.nombre as vehiculo, cliente.nombre as cliente, empleado.nombre as empleado, tienda.nombre as tienda, fecha from compra, coche, cliente, empleado, tienda where coche.id=coche and cliente.id=cliente and empleado.id=empleado and tienda.id=tienda;
 select cliente.id as id, cliente.nombre as nombre, dni, fecha_registro, coalesce(sum(precio), 0) as gastado from compra join coche on coche.id=coche right join cliente on cliente.id=cliente group by cliente.id order by cliente.id;
