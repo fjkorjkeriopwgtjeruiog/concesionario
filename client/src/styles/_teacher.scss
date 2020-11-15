@@ -6,17 +6,32 @@
   margin-top: 32px;
 }
 
-.Nombreprofe {
+.Nombre {
   margin-left: 14%;
   font-size: 2rem;
   text-decoration: underline;
-  width: 22%;
   border: 5px solid rgb(71, 106, 139);
   background-color: rgba(71, 106, 139, 0.85);
   color: whitesmoke;
   padding-top: 5px;
   padding-bottom: 10px;
   padding-left: 20px;
+}
+
+.Coche {
+  width: 300px;
+}
+.Cliente {
+  width: 300px;
+}
+.Empleado {
+  width: 350px;
+}
+.Tienda {
+  width: 425px;
+}
+.Compra {
+  width: 300px;
 }
 
 .Wrapper-flex-profes {

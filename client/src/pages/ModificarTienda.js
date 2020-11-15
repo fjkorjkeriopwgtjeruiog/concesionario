@@ -54,9 +54,10 @@ const ModificarTienda = () => {
       anno_construccion: con,
       gerente: ger,
     };
-    updateTienda(ti, id);
-    alert('¡El concesionario ha sido modificado!');
-    window.location.replace('/tienda');
+    updateTienda(ti, id, function () {
+      alert('¡El concesionario ha sido modificado!');
+      window.location.replace('/tienda');
+    });
   };
 
   return (

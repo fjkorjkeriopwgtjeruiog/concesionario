@@ -24,7 +24,7 @@ const ListaCliente = () => {
 
   return (
     <main>
-      <h1 className="Nombreprofe">Lista de Clientes</h1>
+      <h1 className="Nombre Cliente">Lista de Clientes</h1>
       <div className="action">
         <Link to="/crearcliente">
           <button className="btn" type="button">

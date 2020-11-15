@@ -23,7 +23,7 @@ const ListaCompra = () => {
 
   return (
     <main>
-      <h1 className="Nombreprofe">Lista de Ventas</h1>
+      <h1 className="Nombre Compra">Lista de Ventas</h1>
       <div className="action">
         <Link to="/crearcompra">
           <button className="btn" type="button">

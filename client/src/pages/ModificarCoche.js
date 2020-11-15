@@ -55,9 +55,10 @@ const ModificarCoche = () => {
       plazas: pla,
       foto: fot,
     };
-    updateCoche(co, id);
-    alert('¡Los datos del coche han sido modificados con exito!');
-    window.location.replace('/coche');
+    updateCoche(co, id, function () {
+      alert('¡Los datos del coche han sido modificados con exito!');
+      window.location.replace('/coche');
+    });
   };
 
   return (

@@ -10,20 +10,22 @@ export const getTienda = async (id) => {
   return await response.json();
 };
 
-export const createTienda = async (tienda, response) => {
+export const createTienda = async (tienda, callback, response) => {
   await fetch(REACT_APP_URL + '/tienda', {
     method: 'POST',
     body: JSON.stringify(tienda),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback();
 };
 
-export const updateTienda = async (tienda, id, response) => {
+export const updateTienda = async (tienda, id, callback, response) => {
   await fetch(REACT_APP_URL + '/tienda/' + id, {
     method: 'PUT',
     body: JSON.stringify(tienda),
     headers: { 'Content-Type': 'application/json' },
   });
+  callback();
 };
 
 export const deleteTienda = async (id, response) => {

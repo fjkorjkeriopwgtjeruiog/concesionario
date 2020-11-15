@@ -20,9 +20,10 @@ const CrearCliente = () => {
         dni: dni,
         fecha_registro: new Date(),
       };
-      createCliente(cl);
-      alert('¡El cliente ha sido registrado con exito!');
-      window.location.replace('/cliente');
+      createCliente(cl, function () {
+        alert('¡El cliente ha sido registrado con exito!');
+        window.location.replace('/cliente');
+      });
     }
   };
 

@@ -70,9 +70,10 @@ const ModificarCompra = () => {
       empleado: emp,
       tienda: tie,
     };
-    updateCompra(co, id);
-    alert('¡La venta se ha modificado con exito!');
-    window.location.replace('/compra');
+    updateCompra(co, id, function () {
+      alert('¡La venta se ha modificado con exito!');
+      window.location.replace('/compra');
+    });
   };
 
   return (

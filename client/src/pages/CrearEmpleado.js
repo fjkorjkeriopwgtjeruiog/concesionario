@@ -33,9 +33,10 @@ const CrearEmpleado = () => {
         ciudad_natal: ciu,
         fecha_contratacion: new Date(),
       };
-      createEmpleado(em);
-      alert('¡El empleado ha sido contratado!');
-      window.location.replace('/empleado');
+      createEmpleado(em, function () {
+        alert('¡El empleado ha sido contratado!');
+        window.location.replace('/empleado');
+      });
     }
   };
 

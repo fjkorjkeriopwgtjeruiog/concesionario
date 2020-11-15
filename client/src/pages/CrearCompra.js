@@ -65,9 +65,10 @@ const CrearCompra = () => {
       tienda: tie,
       fecha: new Date(),
     };
-    createCompra(co);
-    alert('¡La venta se ha realizado con exito!');
-    window.location.replace('/compra');
+    createCompra(co, function () {
+      alert('¡La venta se ha realizado con exito!');
+      window.location.replace('/compra');
+    });
   };
 
   return (
