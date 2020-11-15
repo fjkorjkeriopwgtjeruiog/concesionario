@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createCoche } from '../lib/coche.js';
-import { Link } from 'react-router-dom';
 
 const CrearCoche = () => {
   const [nom, setNom] = useState('');
@@ -40,6 +39,7 @@ const CrearCoche = () => {
     };
     createCoche(co);
     alert('¡El coche ha sido creado correctamente!');
+    window.location.replace('/coche');
   };
 
   return (
@@ -77,11 +77,9 @@ const CrearCoche = () => {
           <input type="text" onChange={ajuFot} />
         </div>
 
-        <Link to="/coche">
-          <button className="btn" type="button" onClick={introducecoche}>
-            Crear Coche
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={introducecoche}>
+          Crear Coche
+        </button>
         <br />
       </form>
     </main>

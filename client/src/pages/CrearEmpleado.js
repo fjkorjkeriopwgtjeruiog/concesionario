@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createEmpleado } from '../lib/empleado.js';
-import { Link } from 'react-router-dom';
 import { revisar } from '../funciones.js';
 
 const CrearEmpleado = () => {
@@ -36,6 +35,7 @@ const CrearEmpleado = () => {
       };
       createEmpleado(em);
       alert('¡El empleado ha sido contratado!');
+      window.location.replace('/empleado');
     }
   };
 
@@ -70,11 +70,9 @@ const CrearEmpleado = () => {
           <input type="text" onChange={ajuCiu} />
         </div>
 
-        <Link to="/empleado">
-          <button className="btn" type="button" onClick={introduceempleado}>
-            Contratar Empleado
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={introduceempleado}>
+          Contratar Empleado
+        </button>
         <br />
       </form>
     </main>

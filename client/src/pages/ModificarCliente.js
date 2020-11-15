@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateCliente, getCliente } from '../lib/cliente.js';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { revisar } from '../funciones.js';
 
 const ModificarCliente = () => {
@@ -36,6 +35,7 @@ const ModificarCliente = () => {
       };
       updateCliente(cl, id);
       alert('¡Los datos del cliente han sido actualizados correctamente!');
+      window.location.replace('/cliente');
     }
   };
 
@@ -60,11 +60,9 @@ const ModificarCliente = () => {
           />
         </div>
 
-        <Link to="/cliente">
-          <button className="btn" type="button" onClick={modificacliente}>
-            Modificar Cliente
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={modificacliente}>
+          Modificar Cliente
+        </button>
         <br />
       </form>
     </main>

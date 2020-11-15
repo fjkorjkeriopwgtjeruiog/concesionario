@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { createCompra } from '../lib/compra.js';
-import { Link } from 'react-router-dom';
 
 // Sacamos las anteriores listas creadas hasta ahora.
 import { getAllClientes } from '../lib/cliente.js';
@@ -68,6 +67,7 @@ const CrearCompra = () => {
     };
     createCompra(co);
     alert('¡La venta se ha realizado con exito!');
+    window.location.replace('/compra');
   };
 
   return (
@@ -115,11 +115,9 @@ const CrearCompra = () => {
           </select>
         </div>
 
-        <Link to="/compra">
-          <button className="btn" type="button" onClick={introducetienda}>
-            Añadir Venta
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={introducetienda}>
+          Añadir Venta
+        </button>
         <br />
       </form>
     </main>

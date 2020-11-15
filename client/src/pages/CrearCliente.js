@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createCliente } from '../lib/cliente.js';
-import { Link } from 'react-router-dom';
 import { revisar } from '../funciones.js';
 
 const CrearCliente = () => {
@@ -23,6 +22,7 @@ const CrearCliente = () => {
       };
       createCliente(cl);
       alert('¡El cliente ha sido registrado con exito!');
+      window.location.replace('/cliente');
     }
   };
 
@@ -47,11 +47,9 @@ const CrearCliente = () => {
           />
         </div>
 
-        <Link to="/cliente">
-          <button className="btn" type="button" onClick={introducecliente}>
-            Añadir Cliente
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={introducecliente}>
+          Añadir Cliente
+        </button>
         <br />
       </form>
     </main>

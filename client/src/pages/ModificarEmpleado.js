@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateEmpleado, getEmpleado } from '../lib/empleado.js';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { revisar } from '../funciones.js';
 
 const ModificarEmpleado = () => {
@@ -55,6 +55,7 @@ const ModificarEmpleado = () => {
       };
       updateEmpleado(em, id);
       alert('¡Los datos del empleado han sido modificados!');
+      window.location.replace('/empleado');
     }
   };
 
@@ -89,11 +90,9 @@ const ModificarEmpleado = () => {
           <input type="text" value={ciu} onChange={ajuCiu} />
         </div>
 
-        <Link to="/empleado">
-          <button className="btn" type="button" onClick={modificaempleado}>
-            Modificar Empleado
-          </button>
-        </Link>
+        <button className="btn" type="button" onClick={modificaempleado}>
+          Modificar Empleado
+        </button>
         <br />
       </form>
     </main>
