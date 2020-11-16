@@ -1,12 +1,12 @@
 # ¿Que vas a hacer?
 
 Este proyecto consiste en una página web que maneja una cadena de concesionarios.
-Esta página gestiona las tiendas, los empleados, los clientes y los coches.
-También recopila información sobre la venta de vehículos: Que vehículo compró el cliente, cual fue el cliente, en que tienda se vendió el coche, que encargado le vendió al cliente el coche...
-La empresa tiene una política por la cual los empleados van periódicamente rotando de establecimiento, por lo que puede aparecer el mismo empleado en diferentes tiendas.
-Cada tienda está ubicada en una ciudad, aunque una ciudad puede tener más de una tienda, por lo que para reconocerlas, cada tienda tiene su propio nombre. Además, cada tienda está dirigida por un gerente, el cual es uno de los empleados de la tienda. Cada tienda tiene un solo gerente y cada empleado solo puede ser gerente de una sola tienda.
+Esta página gestiona los concesionarios, los empleados, los clientes y los coches.
+También recopila información sobre la venta de vehículos: Que vehículo compró el cliente, cual fue el cliente, en que concesionario se realizó la venta, que encargado le vendió al cliente el coche...
+La empresa tiene una política por la cual los empleados van periódicamente rotando de concesionario, por lo que puede aparecer el mismo empleado en diferentes concesionarios.
+Cada concesionario está ubicado en una ciudad, aunque una ciudad puede tener más de un concesionario, por lo que para reconocerlos, cada concesionario tiene su propio nombre. Además, cada concesionario está dirigida por un gerente, el cual es uno de los empleados del concesionario. Cada concesionario tiene un solo gerente y cada empleado solo puede ser gerente de un solo concesionarios.
 
-## Las tablas y sus variables
+## Las tablas y sus columnas
 
 - Coche: id, nombre, fabricante, anno_fabricacion, precio, plazas y foto.
 - Cliente: id, nombre, dni y fecha_registro.
@@ -14,18 +14,26 @@ Cada tienda está ubicada en una ciudad, aunque una ciudad puede tener más de u
 - Tienda: id, nombre, ciudad, anno_construccion y gerente.
 - Compra: id, coche, cliente, empleado, tienda y fecha.
 
+### Postdatas
+
+- Se tratan de tablas SQL. Si borras una fila de una tabla y una columna de otra tabla tenía una clave foránea apuntando a dicha tabla, se producirá un borrado en cascada.
+- La columna gerente de la tabla Tienda es clave foránea de la tabla Empleado. Las columnas coche, cliente, empleado y tienda son claves foráneas de Coche, Cliente, Empleado y Tienda.
+- Las columnas id de las 5 tablas son la clave primaria.
+- La columna foto de la tabla Coche y la columna gerente de la tabla Tienda son únicos.
+- Si bien las columnas dni de las tablas Cliente y Empleado no se han indicado como únicas, al manipular la BBDD desde la página web una función se encargará de revisar que no aparezcan valores de dni repetidos entre las 2 tablas. Por ejemplo, no puedes poner el DNI 12345678 en la tabla Cliente si en la tabla Empleado ya existe una fila cuya columna dni tiene ese valor.
+
 ## Páginas
 
 - Al llegar el usuario a nuestra web, empezará en la página de inicio. Esta página saludará al usuario y tendrá un botón con la lista de coches disponibles y su información.
 - En la ficha de cada coche verás un botón que llevará a un formulario para modificar sus datos. También verás un botón que al pulsarlo eliminará el coche de la BBDD.
-- En la cabecera de la página web verás enlaces que llevan a las listas de coches, clientes, empleados, tiendas y compras.
-- Las listas de empleados, clientes, tiendas y compras también tienen los botones para modificar y eliminar los datos de ese componente.
-- Cada una de las 5 listas deben también incluir un botón que lleve a un formulario que permita crear un nuevo registro en esa tabla en particular. En el caso de cliente, empleado y compra, usaras como fecha de inscripción/contratación/compra la fecha en actual, por lo que no aparecen dichas variables entre los campos a rellenar de sus formularios.
+- En la cabecera de la página web verás enlaces que llevan a las listas de coches, clientes, empleados, concesionario y ventas.
+- Las listas de empleados, clientes, concesionarios y ventas también tienen los botones para modificar y eliminar los datos de ese componente.
+- Cada una de las 5 listas también incluyen un botón que lleva a un formulario que permite crear un nuevo registro en esa tabla en particular. En el caso de cliente, empleado y venta, usaras como fecha de inscripción/contratación/compra la fecha en actual, por lo que no aparecen dichas variables entre los campos a rellenar de sus formularios.
 
 ## Técnología usada
 
-- Este es un proyecto Monorepo, con carpetas "servidor" y "clientes".
-- Para montar la BBSS usamos SQL. La Base de Datos es activada mediante postgresql. Las tablas que utilizamos y sus variables pueden verse en el fichero "tienda.sql".
+- Este es un proyecto Monorepo, con una carpeta "servidor" manejando la BBDD y una carpeta "cliente" que gestiona lo que verá el usuario.
+- Para crear la BBSS usamos PostgreSQL. Las tablas que utilizamos y sus variables pueden verse en el fichero "tienda.sql".
 
 ## Instalación
 

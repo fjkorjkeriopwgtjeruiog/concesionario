@@ -24,8 +24,8 @@ const ListaEmpleado = () => {
 
   return (
     <main>
-      <h1 className="Nombre Empleado">Lista de Empleados</h1>
       <div className="action">
+        <h1 className="Nombre Empleado">Lista de Empleados</h1>
         <Link to="/crearempleado">
           <button className="btn" type="button">
             Contratar a un nuevo Empleado

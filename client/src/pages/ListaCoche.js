@@ -23,8 +23,8 @@ const ListaCoche = () => {
 
   return (
     <main>
-      <h1 className="Nombre Coche">Lista de Coches</h1>
       <div className="action">
+        <h1 className="Nombre Coche">Lista de Coches</h1>
         <Link to="/crearcoche">
           <button className="btn" type="button">
             Crear un nuevo Coche
