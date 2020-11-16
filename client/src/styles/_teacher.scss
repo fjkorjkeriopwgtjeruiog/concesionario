@@ -1,13 +1,4 @@
-.action {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 32px;
-  margin-top: 32px;
-}
-
 .Nombre {
-  margin-left: 14%;
   font-size: 2rem;
   text-decoration: underline;
   border: 5px solid rgb(71, 106, 139);
@@ -46,6 +37,8 @@
 
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
+    position: relative;
+    top: 20px;
 
     .lista-profe {
       background-color: rgb(237, 233, 233);
