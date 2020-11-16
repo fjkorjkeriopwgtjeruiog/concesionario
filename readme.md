@@ -1,31 +1,40 @@
 # ¿Que vas a hacer?
 
-Tu tarea consistirá en crear una base de datos que manejara una cadena de tiendas de coches.
-Gestionarás las tiendas, los empleados, los clientes y los coches.
-Es necesario tambien recopilar la venta de los vehículos: Que vehiculo fue comprado, cual fue el cliente, en que tienda, que encargado le vendio al cliente el coche...
-Para hacerlo más interesante, la empresa tiene una política por la cual los empleados van periodicamente rotando de establecimiento, por lo que podría aparecer el mismo empleado en diferentes tiendas.
-Cada tienda estará ubicada en una ciudad, aunque una ciudad puede tener más de una tienda, por lo que para reconocerlas, cada tienda tiene su propio nombre. Además, cada tienda estará dirigida por un gerente, el cual es uno de los empleados de la tienda. Recuerda que cada tienda tiene un solo gerente y cada empleado solo puede ser gerente de una sola tienda.
+Este proyecto consiste en una base de datos que maneja una cadena de concesionarios.
+En nuestra Base de Datos Gestionamos las tiendas, los empleados, los clientes y los coches.
+Tambien recopilamos información sobre la venta de vehículos: Que vehículo compro el cliente, cual fue el cliente, en que tienda se vendio el coche, que encargado le vendio al cliente el coche...
+La empresa tiene una política por la cual los empleados van periodicamente rotando de establecimiento, por lo que puede aparecer el mismo empleado en diferentes tiendas.
+Cada tienda está ubicada en una ciudad, aunque una ciudad puede tener más de una tienda, por lo que para reconocerlas, cada tienda tiene su propio nombre. Además, cada tienda está dirigida por un gerente, el cual es uno de los empleados de la tienda. Cada tienda tiene un solo gerente y cada empleado solo puede ser gerente de una sola tienda.
 
 ## Las tablas y sus variables
 
-- Coche: id, nombre, anno_fabricacion, fabricante, precio y plazas.
-- Empleado: id, nombre, fecha_nacimiento, dni, ciudad_natal y fecha_contratacion.
+- Coche: id, nombre, fabricante, anno_fabricacion, precio, plazas y foto.
 - Cliente: id, nombre, dni y fecha_registro.
+- Empleado: id, nombre, fecha_nacimiento, dni, ciudad_natal y fecha_contratacion.
 - Tienda: id, nombre, ciudad, anno_construccion y gerente.
 - Compra: id, coche, cliente, empleado, tienda y fecha.
 
 ## Páginas
 
-- Necesitamos una página de inicio. Esta página saludará al usuario y tendrá un botón con la lista de coches disponibles.
-- En la página de la lista de coches, al pulsar sobre el nombre de un coche, irás a una página que mostrará información más avanzada del coche.
-- Desde esa página, verás un botón a un formulario para modificar. Tambien verás un botón para eliminar el coche.
+- Necesitamos una página de inicio. Esta página saludará al usuario y tendrá un botón con la lista de coches disponibles y su información.
+- En la ficha de cada coche verás un botón que llevará a un formulario para modificar sus datos. Tambien verás un botón que al pulsarlo eliminará el coche de la BBDD.
 - En la cabecerá de la página web verás enlaces que llevan a las listas de coches, clientes, empleados, tiendas y compras.
-- Las listas de empleados, clientes, tiendas y compras tambien deben tener la opción de consultar más datos de un elemento particular, incluyendo botones para modicar y eliminar los datos de ese componente.
-- Cada una de las 5 listas deben tambien incluir un botón que lleve a un formulario que permita crear un nuevo registro en esa tabla en particular. En el caso de cliente, empleado y compra, usaras como fecha de inscripción/contratación/compra la fecha en actual.
+- Las listas de empleados, clientes, tiendas y compras tambien tenienen los botones para modicar y eliminar los datos de ese componente.
+- Cada una de las 5 listas deben tambien incluir un botón que lleve a un formulario que permita crear un nuevo registro en esa tabla en particular. En el caso de cliente, empleado y compra, usaras como fecha de inscripción/contratación/compra la fecha en actual, por lo que no aparecen dichas variables entre los campos a rellenar de sus formularios.
 
-## Avanzado
+## Técnología usada
 
-- Aún queda corregir fallas al redirigir rutas.
-- Deberías a la hora de crear una venta impedirle vender coches a empleados que sean gerentes, a no ser que el coche sea vendido en la tienda que está actualmente dirigiendo.
-- Crea una variable para los coches que muestre una foto. Eso te obligará a mejorar tu formulario para poder meter imagenes.
-- Debes pulir los ficheros scss. Revisa como cambiar el tamaño de los input.
+- Este es un proyecto Monorepo, con carpetas "servidor" y "clientes".
+- Para montar la BBSS usamos SQL. La Base de Datos es activada mediante postgresql. Las tablas que utilizamos y sus variables pueden verse en el fichero "tienda.sql".
+
+## Instalación
+
+1. Al descargarte el proyecto, el primer paso es activar postgresql, para lo cual abrimos nuestro terminal y escribimos "sudo service postgresql start".
+2. Lo siguiente es introducir en la BBDD las tablas que necesitarás, por lo que escibe en tu terminal "psql -d (nombre de tu BBDD)" para entrar en el modo SQL y introduce las tablas y valores que aparecen en el fichero "tienda.sql".
+3. Renombra base_ejemplo.js a base.js y modifica sus datos para que se conecte con tu terminal SQL.
+4. Abre una 2ª pestaña en tu terminal. En una de las pestañas escribirás "yarn workspace server start" y en la otra "yarn workspace server start". Si todo va bien, debería abrirse el navegador web con la página de la cadena de concesionarios.
+
+### Capturas de pantalla
+
+![Screenshot](client/src/images/arranque.png)
+![Screenshot](client/src/images/presentacion.png)
