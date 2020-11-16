@@ -45,12 +45,12 @@ const ListaCompra = () => {
 
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcompra/' + compra.id}>
-                    <button className="btn btn-edit" type="button">
+                    <button className="btn warning" type="button">
                       Modificar
                     </button>
                   </Link>
                   <button
-                    className="btn btn-edit"
+                    className="btn danger"
                     type="button"
                     value={compra.id}
                     onClick={eliminacompra}

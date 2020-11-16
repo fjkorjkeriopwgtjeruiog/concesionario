@@ -43,12 +43,12 @@ const ListaCliente = () => {
                 <h4>Dinero gastado: {cliente.gastado}€</h4>
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcliente/' + cliente.id}>
-                    <button className="btn btn-edit" type="button">
+                    <button className="btn warning" type="button">
                       Modificar
                     </button>
                   </Link>
                   <button
-                    className="btn btn-edit"
+                    className="btn danger"
                     type="button"
                     value={cliente.id}
                     onClick={eliminacliente}
