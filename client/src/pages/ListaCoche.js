@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 const ListaCoche = () => {
   const [cocheData, setCocheData] = useState([]);
+  const [resul, setResul] = useState(-1);
 
   const fetchAllCoches = async () => {
     const data = await getAllCoches();
     setCocheData(data);
+    setResul(data.length);
   };
 
   useEffect(() => {
@@ -30,6 +32,7 @@ const ListaCoche = () => {
             Crear un nuevo Coche
           </button>
         </Link>
+        <h1 className="Nombre Compra">Resultados: {resul}</h1>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
