@@ -62,3 +62,10 @@ export const revisar = async (d, crea) => {
 
   return true;
 };
+
+export function fechar(f) {
+  const fecha = new Date(f);
+  const valor = { year: 'numeric', month: 'long', day: 'numeric' };
+
+  return fecha.toLocaleDateString('es-ES', valor);
+}

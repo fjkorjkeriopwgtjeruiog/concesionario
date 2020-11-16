@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getAllClientela, deleteCliente } from '../lib/cliente.js';
 import { Link } from 'react-router-dom';
-import { nif } from '../funciones.js';
+import { nif, fechar } from '../funciones.js';
 
 const ListaCliente = () => {
   const [clienteData, setClienteData] = useState([]);
+  const [resul, setResul] = useState(-1);
 
   const fetchAllClientes = async () => {
     const data = await getAllClientela();
     setClienteData(data);
+    setResul(data.length);
   };
 
   useEffect(() => {
@@ -31,6 +33,7 @@ const ListaCliente = () => {
             Registrar a un nuevo Cliente
           </button>
         </Link>
+        <h1 className="Nombre Compra">Resultados: {resul}</h1>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
@@ -39,7 +42,7 @@ const ListaCliente = () => {
               <ul className="lista-profe" key={i}>
                 <h2>{cliente.nombre}</h2>
                 <h4>NIF: {nif(cliente.dni)}</h4>
-                <h4>Fecha de Registro: {cliente.fecha_registro}</h4>
+                <h4>Fecha de Registro: {fechar(cliente.fecha_registro)}</h4>
                 <h4>Dinero gastado: {cliente.gastado}€</h4>
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcliente/' + cliente.id}>

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getAllCompras, deleteCompra } from '../lib/compra.js';
 import { Link } from 'react-router-dom';
+import { fechar } from '../funciones.js';
 
 const ListaCompra = () => {
   const [compraData, setCompraData] = useState([]);
+  const [resul, setResul] = useState(-1); // A la espera de que los datos carguen.
 
   const fetchAllCompras = async () => {
     const data = await getAllCompras();
     setCompraData(data);
+    setResul(data.length);
   };
 
   useEffect(() => {
@@ -30,6 +33,7 @@ const ListaCompra = () => {
             Incluir una nueva Venta
           </button>
         </Link>
+        <h1 className="Nombre Compra">Resultados: {resul}</h1>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
@@ -41,7 +45,7 @@ const ListaCompra = () => {
                 <h4>Comprador: {compra.cliente}</h4>
                 <h4>Vendedor: {compra.empleado}</h4>
                 <h4>Concesionario: {compra.tienda}</h4>
-                <h4>Fecha de la compra: {compra.fecha}</h4>
+                <h4>Fecha de la compra: {fechar(compra.fecha)}</h4>
 
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcompra/' + compra.id}>

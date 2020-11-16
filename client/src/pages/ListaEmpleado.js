@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { getAllEmpleados, deleteEmpleado } from '../lib/empleado.js';
 import { Link } from 'react-router-dom';
-import { nif } from '../funciones.js';
+import { nif, fechar } from '../funciones.js';
 
 const ListaEmpleado = () => {
   const [empleadoData, setEmpleadoData] = useState([]);
+  const [resul, setResul] = useState(-1);
 
   const fetchAllEmpleados = async () => {
     const data = await getAllEmpleados();
     setEmpleadoData(data);
+    setResul(data.length);
   };
 
   useEffect(() => {
@@ -31,6 +33,7 @@ const ListaEmpleado = () => {
             Contratar a un nuevo Empleado
           </button>
         </Link>
+        <h1 className="Nombre Compra">Resultados: {resul}</h1>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">
@@ -38,10 +41,14 @@ const ListaEmpleado = () => {
             return (
               <ul className="lista-profe" key={i}>
                 <h2>{empleado.nombre}</h2>
-                <h4>Fecha de nacimiento: {empleado.fecha_nacimiento}</h4>
+                <h4>
+                  Fecha de nacimiento: {fechar(empleado.fecha_nacimiento)}
+                </h4>
                 <h4>NIF: {nif(empleado.dni)}</h4>
                 <h4>Ciudad natal: {empleado.ciudad_natal}</h4>
-                <h4>Fecha de Contratación: {empleado.fecha_contratacion}</h4>
+                <h4>
+                  Fecha de Contratación: {fechar(empleado.fecha_contratacion)}
+                </h4>
 
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarempleado/' + empleado.id}>

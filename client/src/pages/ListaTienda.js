@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 const ListaTienda = () => {
   const [tiendaData, setTiendaData] = useState([]);
+  const [resul, setResul] = useState(-1);
 
   const fetchAllTiendas = async () => {
     const data = await getAllTiendas();
     setTiendaData(data);
+    setResul(data.length);
   };
 
   useEffect(() => {
@@ -30,6 +32,7 @@ const ListaTienda = () => {
             Crear un nuevo Concesionario
           </button>
         </Link>
+        <h1 className="Nombre Compra">Resultados: {resul}</h1>
       </div>
       <div className="Wrapper-flex-profes">
         <ul className="lista-profes-container">

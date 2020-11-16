@@ -1,7 +1,7 @@
 # ¿Que vas a hacer?
 
 Este proyecto consiste en una página web que maneja una cadena de concesionarios.
-Esta página gestiona los concesionarios, los empleados, los clientes y los coches.
+La página debe gestionar los concesionarios, los empleados, los clientes y los coches.
 También recopila información sobre la venta de vehículos: Que vehículo compró el cliente, cual fue el cliente, en que concesionario se realizó la venta, que encargado le vendió al cliente el coche...
 La empresa tiene una política por la cual los empleados van periódicamente rotando de concesionario, por lo que puede aparecer el mismo empleado en diferentes concesionarios.
 Cada concesionario está ubicado en una ciudad, aunque una ciudad puede tener más de un concesionario, por lo que para reconocerlos, cada concesionario tiene su propio nombre. Además, cada concesionario está dirigida por un gerente, el cual es uno de los empleados del concesionario. Cada concesionario tiene un solo gerente y cada empleado solo puede ser gerente de un solo concesionarios.
@@ -29,6 +29,10 @@ Cada concesionario está ubicado en una ciudad, aunque una ciudad puede tener m�
 - En la cabecera de la página web verás enlaces que llevan a las listas de coches, clientes, empleados, concesionario y ventas.
 - Las listas de empleados, clientes, concesionarios y ventas también tienen los botones para modificar y eliminar los datos de ese componente.
 - Cada una de las 5 listas también incluyen un botón que lleva a un formulario que permite crear un nuevo registro en esa tabla en particular. En el caso de cliente, empleado y venta, usaras como fecha de inscripción/contratación/compra la fecha en actual, por lo que no aparecen dichas variables entre los campos a rellenar de sus formularios.
+
+### Postdatas
+
+- De cada cliente veremos tambien cuanto dinero se han gastado comprando coches.
 
 ## Técnología usada
 
