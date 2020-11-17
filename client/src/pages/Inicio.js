@@ -8,7 +8,8 @@ const Inicio = () => {
         <u>¡Bienvenido a los Concesionarios Max!</u>
       </h1>
       <p>
-        ¿Buscas un coche de última gama? ¿Uno barato? ¿Uno con mucho espacio?
+        ¿Buscas un coche de última generación? ¿Uno barato? ¿Uno con mucho
+        espacio?
         <br />
         Sea cual sea el coche que estes buscando, ¡Aquí lo encontrarás!
       </p>

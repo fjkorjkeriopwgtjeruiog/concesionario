@@ -46,7 +46,6 @@ const ListaCoche = () => {
                 <h4>Año de fabricación: {coche.anno_fabricacion}</h4>
                 <h4>Precio: {coche.precio}€</h4>
                 <h4>Nº de asientos: {coche.plazas}</h4>
-
                 <l className="Wrapper-flex-profes">
                   <Link to={'/modificarcoche/' + coche.id}>
                     <button className="btn warning" type="button">

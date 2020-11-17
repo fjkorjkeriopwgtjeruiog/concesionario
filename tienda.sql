@@ -14,8 +14,8 @@ create table coche(
   foto varchar unique
 );
 
-insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas,foto) values('ignis','suzuki',2017,17000,8,'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg/1200px-2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg');
-insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas,foto) values('petroska','motorola',2010,9000,4,'https://imagenes-cdn.autofacil.es/multimedia/fotos/2018/11/15/143067/preview2col_mg.jpg?t=1542284524000');
+insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas,foto) values('Ignis','Suzuki',2017,17000,5,'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg/1200px-2018_Suzuki_Ignis_SZ5_SHVS_Allgrip_1.2_Front.jpg');
+insert into coche (nombre,fabricante,anno_fabricacion,precio,plazas,foto) values('QVolt','Bird Studio',2005,19000,1,'https://2.bp.blogspot.com/-oNAYdXc8k4Y/VuMBMi-mmdI/AAAAAAAAALA/-KbaB0emQq4SJbGaPtAwRFGqCtI6tb7Pg/s1600/a0062822_20381676.jpg');
 
 create table cliente(
   id serial primary key,
