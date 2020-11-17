@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { createCliente } from '../lib/cliente.js';
 import { revisar } from '../funciones.js';
+import { useHistory } from 'react-router-dom';
 
 const CrearCliente = () => {
   const [nom, setNom] = useState('');
   const [dni, setDni] = useState(10000000);
+  const history = useHistory();
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -22,7 +24,7 @@ const CrearCliente = () => {
       };
       createCliente(cl, function () {
         alert('¡El cliente ha sido registrado con exito!');
-        window.location.replace('/cliente');
+        history.push('/cliente');
       });
     }
   };
