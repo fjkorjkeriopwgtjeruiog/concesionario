@@ -44,7 +44,7 @@ import {
 } from './data/otros.js';
 
 const app = express();
-const port = 5001;
+const PORT = process.env.PORT || 5001;
 
 dotenv.config();
 app.use(cors());
@@ -353,6 +353,6 @@ app.get('/dni', (req, res) => {
 
 // Puerto activado.
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`);
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}.`);
 });
