@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateCompra, getCompra } from '../lib/compra.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 // Sacamos las anteriores listas creadas hasta ahora.
 import { getAllClientes } from '../lib/cliente.js';
@@ -13,6 +13,7 @@ const ModificarCompra = () => {
   const [cli, setCli] = useState(0);
   const [emp, setEmp] = useState(0);
   const [tie, setTie] = useState(0);
+  const history = useHistory();
 
   // Esta vez necesitamos MUCHAS arrays para los valores foraneos.
   const [cocp, setCocp] = useState([]);
@@ -72,7 +73,7 @@ const ModificarCompra = () => {
     };
     updateCompra(co, id, function () {
       alert('¡La venta se ha modificado con exito!');
-      window.location.replace('/compra');
+      history.push('/compra');
     });
   };
 

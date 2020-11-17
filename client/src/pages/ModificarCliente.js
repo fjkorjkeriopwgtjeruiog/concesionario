@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { updateCliente, getCliente } from '../lib/cliente.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { revisar } from '../funciones.js';
 
 const ModificarCliente = () => {
   const [nom, setNom] = useState('');
   const [dni, setDni] = useState(10000000);
+  const history = useHistory();
 
   const { id } = useParams();
 
@@ -35,7 +36,7 @@ const ModificarCliente = () => {
       };
       updateCliente(cl, id, function () {
         alert('¡Los datos del cliente han sido actualizados correctamente!');
-        window.location.replace('/cliente');
+        history.push('/cliente');
       });
     }
   };

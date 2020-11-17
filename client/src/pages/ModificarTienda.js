@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { updateTienda, getTienda } from '../lib/tienda.js';
 import { getEmpleadosLibres, getEmpleado } from '../lib/empleado.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const ModificarTienda = () => {
   const [nom, setNom] = useState('');
@@ -9,6 +9,7 @@ const ModificarTienda = () => {
   const [con, setCon] = useState(0);
   const [ger, setGer] = useState(0);
   const [gerentes, partido] = useState([]);
+  const history = useHistory();
 
   const { id } = useParams();
 
@@ -56,7 +57,7 @@ const ModificarTienda = () => {
     };
     updateTienda(ti, id, function () {
       alert('¡El concesionario ha sido modificado!');
-      window.location.replace('/tienda');
+      history.push('/tienda');
     });
   };
 

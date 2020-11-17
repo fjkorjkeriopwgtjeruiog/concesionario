@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createCoche } from '../lib/coche.js';
+import { useHistory } from 'react-router-dom';
 
 const CrearCoche = () => {
   const [nom, setNom] = useState('');
@@ -8,6 +9,7 @@ const CrearCoche = () => {
   const [pre, setPre] = useState(0);
   const [pla, setPla] = useState(0);
   const [fot, setFot] = useState('');
+  const history = useHistory();
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -39,7 +41,7 @@ const CrearCoche = () => {
     };
     createCoche(co, function () {
       alert('¡El coche ha sido creado correctamente!');
-      window.location.replace('/coche');
+      history.push('/coche');
     });
   };
 

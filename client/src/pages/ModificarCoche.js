@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateCoche, getCoche } from '../lib/coche.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const ModificarCoche = () => {
   const [nom, setNom] = useState('');
@@ -9,6 +9,7 @@ const ModificarCoche = () => {
   const [pre, setPre] = useState(0);
   const [pla, setPla] = useState(0);
   const [fot, setFot] = useState('');
+  const history = useHistory();
 
   const { id } = useParams();
 
@@ -57,7 +58,7 @@ const ModificarCoche = () => {
     };
     updateCoche(co, id, function () {
       alert('¡Los datos del coche han sido modificados con exito!');
-      window.location.replace('/coche');
+      history.push('/coche');
     });
   };
 

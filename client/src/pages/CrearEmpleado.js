@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { createEmpleado } from '../lib/empleado.js';
 import { revisar } from '../funciones.js';
+import { useHistory } from 'react-router-dom';
 
 const CrearEmpleado = () => {
   const [nom, setNom] = useState('');
   const [nac, setNac] = useState('');
   const [dni, setDni] = useState(10000000);
   const [ciu, setCiu] = useState('');
+  const history = useHistory();
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -35,7 +37,7 @@ const CrearEmpleado = () => {
       };
       createEmpleado(em, function () {
         alert('¡El empleado ha sido contratado!');
-        window.location.replace('/empleado');
+        history.push('/empleado');
       });
     }
   };

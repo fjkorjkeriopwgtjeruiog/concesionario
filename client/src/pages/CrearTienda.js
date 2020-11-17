@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createTienda } from '../lib/tienda.js';
 import { getEmpleadosLibres } from '../lib/empleado.js';
+import { useHistory } from 'react-router-dom';
 
 const CrearTienda = () => {
   const [nom, setNom] = useState('');
@@ -8,6 +9,7 @@ const CrearTienda = () => {
   const [con, setCon] = useState(0);
   const [ger, setGer] = useState(0);
   const [gerentes, partido] = useState([]);
+  const history = useHistory();
 
   const ajuNom = (event) => {
     setNom(event.currentTarget.value);
@@ -30,7 +32,7 @@ const CrearTienda = () => {
     partido(data);
     if (data.length === 0) {
       alert('¡No queda ningún empleado que pueda dirigir el concesionario!');
-      window.location.replace('/tienda'); // Redirigimos de vuelta a la lista.
+      history.push('/tienda'); // Redirigimos de vuelta a la lista.
     } else setGer(data[0].id); // Le damos un valor predeterminado.
   };
 
@@ -48,7 +50,7 @@ const CrearTienda = () => {
     };
     createTienda(ti, function () {
       alert('¡El concesionario ha sido añadido!');
-      window.location.replace('/tienda');
+      history.push('/tienda');
     });
   };
 

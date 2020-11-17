@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { updateEmpleado, getEmpleado } from '../lib/empleado.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { revisar } from '../funciones.js';
 
 const ModificarEmpleado = () => {
@@ -8,7 +8,7 @@ const ModificarEmpleado = () => {
   const [nac, setNac] = useState('');
   const [dni, setDni] = useState(10000000);
   const [ciu, setCiu] = useState('');
-
+  const history = useHistory();
   const { id } = useParams();
 
   const fetchEmpleado = async (id) => {
@@ -55,7 +55,7 @@ const ModificarEmpleado = () => {
       };
       updateEmpleado(em, id, function () {
         alert('¡Los datos del empleado han sido modificados!');
-        window.location.replace('/empleado');
+        history.push('/empleado');
       });
     }
   };

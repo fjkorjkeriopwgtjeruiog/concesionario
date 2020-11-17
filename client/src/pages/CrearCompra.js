@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createCompra } from '../lib/compra.js';
+import { useHistory } from 'react-router-dom';
 
 // Sacamos las anteriores listas creadas hasta ahora.
 import { getAllClientes } from '../lib/cliente.js';
@@ -12,6 +13,7 @@ const CrearCompra = () => {
   const [cli, setCli] = useState(0);
   const [emp, setEmp] = useState(0);
   const [tie, setTie] = useState(0);
+  const history = useHistory();
 
   // Esta vez necesitamos MUCHAS arrays para los valores foraneos.
   const [cocp, setCocp] = useState([]);
@@ -67,7 +69,7 @@ const CrearCompra = () => {
     };
     createCompra(co, function () {
       alert('¡La venta se ha realizado con exito!');
-      window.location.replace('/compra');
+      history.push('/compra');
     });
   };
 
