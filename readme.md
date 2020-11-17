@@ -33,6 +33,7 @@ Cada concesionario está ubicado en una ciudad, aunque una ciudad puede tener m�
 ### Postdatas
 
 - De cada cliente veremos tambien cuanto dinero se han gastado comprando coches.
+- Veremos de cada lista cuantas filas tiene la tabla. Si se produce un error, este número estará a -1.
 
 ## Técnología usada
 
