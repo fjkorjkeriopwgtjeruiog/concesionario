@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 import {
   getEmpleados,
@@ -46,7 +47,7 @@ const app = express();
 const port = 5001;
 
 dotenv.config();
-
+app.use(cors());
 app.use(express.json());
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
