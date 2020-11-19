@@ -1,4 +1,4 @@
-import pool from '../base.js';
+import pool from './base.js';
 
 export const TiendaReal = () => {
   return new Promise(function (resolve, reject) {

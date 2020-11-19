@@ -1,4 +1,4 @@
-import pool from '../base.js';
+import pool from './base.js';
 
 export const getEmpleados = () => {
   return new Promise(function (resolve, reject) {

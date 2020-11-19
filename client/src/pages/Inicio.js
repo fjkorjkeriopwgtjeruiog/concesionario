@@ -16,6 +16,9 @@ const Inicio = () => {
       <Link to="/coche">
         <button className="VcButton">Lista de Coches</button>
       </Link>
+      <ul>
+        <img src={'../images/pieza.jpg'} alt="Error" />
+      </ul>
     </main>
   );
 };

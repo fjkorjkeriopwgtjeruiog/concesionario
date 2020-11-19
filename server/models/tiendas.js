@@ -1,4 +1,4 @@
-import pool from '../base.js';
+import pool from './base.js';
 
 export const getTiendaId = (id) => {
   return new Promise(function (resolve, reject) {
